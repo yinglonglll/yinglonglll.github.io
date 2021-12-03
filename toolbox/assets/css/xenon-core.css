@@ -918,13 +918,14 @@ body {
     display: table-cell;
     position: relative;
     width: 280px;
-    background: #2c2e2f;
+    background: #ececec;
     z-index: 1
 }
 
 .sidebar-menu .logo-env {
-    padding: 19px 45px;
-    border-bottom: 1px solid #313437
+    padding: 19px 30px;
+    border-bottom: 1px solid #ffffff8c;
+    background-color: #fff;
 }
 
 .sidebar-menu .logo-env .logo {
@@ -971,11 +972,11 @@ body {
 }
 
 .sidebar-menu .main-menu a {
-    color: #979898;
+    color: #000000;
     text-decoration: none;
     display: block;
     padding: 13px 5px;
-    border-bottom: 1px solid #313437
+    /*border-bottom: 1px solid #313437*/
 }
 
 .sidebar-menu .main-menu a>i {
@@ -1001,11 +1002,11 @@ body {
 }
 
 .sidebar-menu .main-menu a:hover {
-    color: #fff
+    color: rgb(238, 11, 11)
 }
 
 .sidebar-menu .main-menu li.active>a {
-    color: #fff
+    color: blue
 }
 
 .sidebar-menu .main-menu li.has-sub>a:before {
@@ -1181,7 +1182,7 @@ body {
 
 .sidebar-menu .ps-scrollbar-x-rail .ps-scrollbar-x,
 .sidebar-menu .ps-scrollbar-y-rail .ps-scrollbar-y {
-    background-color: rgba(255, 255, 255, .6)
+    background-color: rgba(255, 0, 255, .6)
 }
 
 .sidebar-menu.fixed {
@@ -2277,8 +2278,8 @@ body.chat-open .user-info-navbar a[data-toggle=chat] {
     min-height: 0;
     border: 0;
     padding: 0;
-    margin: -30px;
-    margin-bottom: 30px
+    /*margin: -30px;*/
+    margin-bottom: 0px
 }
 
 .user-info-navbar .user-info-menu {
@@ -2286,7 +2287,9 @@ body.chat-open .user-info-navbar a[data-toggle=chat] {
 }
 
 .user-info-navbar .user-info-menu.left-links {
-    float: left
+    float: left;
+    height: 100px;
+    
 }
 
 .user-info-navbar .user-info-menu.right-links {

@@ -41,6 +41,24 @@
 
 <body>
 
+    <!-- 给hexo博客适配全局深色模式 ,css样式放在my.css中-->
+    <script>
+        if (localStorage.getItem('dark') === '1') {
+        document.body.classList.add('dark');
+        }
+        else if (new Date().getHours() >= 22 || new Date().getHours() < 7) {
+        document.body.classList.add('dark');
+        } 
+        else if (matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+        }
+    </script>
+    <a onclick="switchNightMode()" id="sma">
+        <i class="fa fa-moon-o" id="nightMode" aria-hidden="true"></i>
+    </a>
+    
+    <!-- END 给hexo博客适配全局深色模式 -->    
+
     <!-- start webpushr tracking code --> 
     <script>(function(w,d, s, id) {if(typeof(w.webpushr)!=='undefined') return;w.webpushr=w.webpushr||function(){(w.webpushr.q=w.webpushr.q||[]).push(arguments)};var js, fjs = d.getElementsByTagName(s)[0];js = d.createElement(s); js.id = id;js.async=1;js.src = "https://cdn.webpushr.com/app.min.js";
     fjs.parentNode.appendChild(js);}(window,document, 'script', 'webpushr-jssdk'));
@@ -94,25 +112,25 @@
           
           <i class="fas fa-music" style="margin-top: -20px; zoom: 0.6;"></i>
           
-          <span>Musics</span>
+          <span>音乐</span>
         </a>
       </li>
       
       <li>
-        <a href="/movies">
+        <a href="/video">
           
           <i class="fas fa-film" style="margin-top: -20px; zoom: 0.6;"></i>
           
-          <span>Movies</span>
+          <span>视频</span>
         </a>
       </li>
       
       <li>
-        <a href="/books">
+        <a href="/essay">
           
           <i class="fas fa-book" style="margin-top: -20px; zoom: 0.6;"></i>
           
-          <span>Books</span>
+          <span>随笔</span>
         </a>
       </li>
       
@@ -151,20 +169,20 @@
     <ul class="sub-nav menus_item_child ">
       
       <li>
-        <a href="/tags">
-          
-          <i class="fas fa-tags" style="margin-top: -20px; zoom: 0.6;"></i>
-          
-          <span>标签</span>
-        </a>
-      </li>
-      
-      <li>
         <a href="/categories">
           
           <i class="fas fa-bookmark" style="margin-top: -20px; zoom: 0.6;"></i>
           
           <span>类别</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/tags">
+          
+          <i class="fas fa-bookmark" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>标签</span>
         </a>
       </li>
       
@@ -351,27 +369,27 @@
 				  
 				   <i class="fa fas fa-music" style="position: absolute;left:50px" ></i>
 			      
-		          <span>Musics</span>
+		          <span>音乐</span>
                   </a>
                 </li>
               
                 <li>
 
-                  <a href="/movies " style="margin-left:75px">
+                  <a href="/video " style="margin-left:75px">
 				  
 				   <i class="fa fas fa-film" style="position: absolute;left:50px" ></i>
 			      
-		          <span>Movies</span>
+		          <span>视频</span>
                   </a>
                 </li>
               
                 <li>
 
-                  <a href="/books " style="margin-left:75px">
+                  <a href="/essay " style="margin-left:75px">
 				  
 				   <i class="fa fas fa-book" style="position: absolute;left:50px" ></i>
 			      
-		          <span>Books</span>
+		          <span>随笔</span>
                   </a>
                 </li>
               
@@ -412,21 +430,21 @@
               
                 <li>
 
-                  <a href="/tags " style="margin-left:75px">
-				  
-				   <i class="fa fas fa-tags" style="position: absolute;left:50px" ></i>
-			      
-		          <span>标签</span>
-                  </a>
-                </li>
-              
-                <li>
-
                   <a href="/categories " style="margin-left:75px">
 				  
 				   <i class="fa fas fa-bookmark" style="position: absolute;left:50px" ></i>
 			      
 		          <span>类别</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/tags " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-bookmark" style="position: absolute;left:50px" ></i>
+			      
+		          <span>标签</span>
                   </a>
                 </li>
               
@@ -577,6 +595,19 @@
 </header>
 
     
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
 
 
 
@@ -622,9 +653,17 @@
         top: 64px;
     }
 
+    /* 适配目录 */
     .toc-widget {
+        /* 修改前
+        width: 345px;
+        padding-left: 20px; */
         width: 345px;
         padding-left: 20px;
+        background-color: rgb(255, 255, 255,0.7);
+        border-radius: 10px;
+        box-shadow: 0 10px 35px 2px rgba(0, 0, 0, .15), 0 5px 15px rgba(0, 0, 0, .07), 0 2px 5px -5px rgba(0, 0, 0, .1) !important;
+    
     }
 
     .toc-widget .toc-title {
@@ -1252,6 +1291,12 @@
 
 <!--酷Q推送-->
 
+<!-- 直达评论 -->
+<div id="to_comment" class="comment-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#vcomments" title="直达评论">
+        <i class="fas fa-comments"></i>
+    </a>
+</div>
 
     
 
@@ -1412,9 +1457,115 @@
 <script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
 
 
+<!-- 对页面进行仿信纸样式修饰essay -->
+
+<style> 
+    .ititle { 
+        margin: 15px 0; 
+        text-align:center; 
+        font-family: 'Architects Daughter', cursive; 
+    } .ipage { 
+        line-height: 30px; 
+        margin: 0 auto; 
+        padding: 15px 32px 29px; 
+        background-color: #f9f9f9; 
+        box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.26); 
+        -moz-border-radius-bottomleft: 20px 500px; 
+        -moz-border-radius-bottomright: 500px 30px; 
+        -moz-border-radius-topright: 5px 100px; 
+        -webkit-border-bottom-left-radius: 20px 500px; 
+        -webkit-border-bottom-right-radius: 64px 10px; 
+        -webkit-border-top-right-radius: 5px 100px; 
+        border-bottom-left-radius: 20px 500px; 
+        border-bottom-right-radius: 64px 10px; 
+        border-top-right-radius: 5px 100px; 
+        -webkit-background-size: 100% 30px; 
+        -moz-box-shadow: 0 2px 10px 1px rgba(0, 0, 0, 0.2); 
+        -webkit-box-shadow: 0 2px 10px 1px rgba(0, 0, 0, 0.2); 
+        text-shadow: 0 1px 0 #F6EF97; 
+        position: relative; 
+    } 
+    .izhengwen { 
+        position: relative; 
+        top: 0; 
+        left: 0; 
+        z-index: 2; 
+        height: auto; 
+        background: repeating-linear-gradient(to bottom, #f9f9f9, #f9f9f9 31px, #6BA2D8 1px, #f9f9f9); background-size: 100% 32px;
+    } 
+    #articleContent p { 
+        margin: 0 
+    } 
+    .ititle { 
+        font-family: 'Architects Daughter', cursive; 
+        font-size: 1.45rem!important; padding: 10px auto; 
+    } 
+    .izhengwen p { 
+        position: relative; 
+        line-height: 2.2rem!important; 
+        text-indent: 2em; 
+        font-family: 'Architects Daughter', cursive!important; 
+        font-size: 1.45rem!important; 
+    } 
+    .ipage::before { 
+        content: " "; display: inline-block; 
+        position: absolute; top: 0px; bottom: 0; 
+        right: 52px; z-index: 4; 
+        width: 4px; 
+        height: 100%; 
+        border-left: 1px solid #fca1a1; 
+    } 
+    .izhengwen p:nth-child(odd):before { 
+        content: " "; 
+        display: inline-block; 
+        position: absolute; 
+        top: 0; left: -16px; z-index: 3; 
+        width: 24px; height: 24px; 
+        background-color: #fff; 
+        -webkit-border-radius: 50%; 
+        -moz-border-radius: 50%; 
+        border-radius: 50%; 
+        box-shadow: inset 0px 2px 5px 0px rgba(0, 0, 0, 0.26); 
+    } 
+    .ipage:after { 
+        content: " "; 
+        display: inline-block; 
+        position: absolute; 
+        top: 0; 
+        bottom: 0; 
+        left: 52px; 
+        z-index: 3; 
+        width: 4px; 
+        height: 100%; 
+        border-left: 4px double #fca1a1; 
+    } 
+    .ipage p { 
+        padding: 0 2em; 
+        color: #333!important; 
+    } 
+    body.dark .ipage { 
+        opacity: 0.85; 
+    } 
+    /*小屏幕下(手机类)的样式*/ 
+    @media only screen and (max-width: 600px) { 
+        .ipage { 
+            padding: 15px 23px 29px; 
+        } 
+        .ipage:after { 
+            left: 36px; 
+        } 
+        .ipage::before { 
+            right: 36px; 
+        } 
+        .ipage p { 
+            padding: 0 0.9em; 
+        } 
+    } 
+</style>
     </div>
     <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
-        <div class="toc-widget card" style="background-color: white;">
+        <div class="toc-widget card">
+        <!-- <div class="toc-widget card" style="background-color: white;"> 解决黑夜模式下目录仍固定白色背景的情况-->
             <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
             <div id="toc-content"></div>
         </div>
@@ -1583,7 +1734,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">144</span>
+                        class="white-color">198</span>
             
             
             
@@ -1837,14 +1988,6 @@ $(function () {
     
 
     <!-- 鼠标星星特效 -->
-     
-        <script type="text/javascript">
-            // 只在桌面版网页启用特效
-            var windowWidth = $(window).width();
-            if (windowWidth > 768) {
-                document.write('<script type="text/javascript" src="/libs/others/star.js"><\/script>');
-            }
-        </script>
     
 
     <!-- 动态标题 -->

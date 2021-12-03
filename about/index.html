@@ -41,6 +41,24 @@
 
 <body>
 
+    <!-- 给hexo博客适配全局深色模式 ,css样式放在my.css中-->
+    <script>
+        if (localStorage.getItem('dark') === '1') {
+        document.body.classList.add('dark');
+        }
+        else if (new Date().getHours() >= 22 || new Date().getHours() < 7) {
+        document.body.classList.add('dark');
+        } 
+        else if (matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+        }
+    </script>
+    <a onclick="switchNightMode()" id="sma">
+        <i class="fa fa-moon-o" id="nightMode" aria-hidden="true"></i>
+    </a>
+    
+    <!-- END 给hexo博客适配全局深色模式 -->    
+
     <!-- start webpushr tracking code --> 
     <script>(function(w,d, s, id) {if(typeof(w.webpushr)!=='undefined') return;w.webpushr=w.webpushr||function(){(w.webpushr.q=w.webpushr.q||[]).push(arguments)};var js, fjs = d.getElementsByTagName(s)[0];js = d.createElement(s); js.id = id;js.async=1;js.src = "https://cdn.webpushr.com/app.min.js";
     fjs.parentNode.appendChild(js);}(window,document, 'script', 'webpushr-jssdk'));
@@ -94,25 +112,25 @@
           
           <i class="fas fa-music" style="margin-top: -20px; zoom: 0.6;"></i>
           
-          <span>Musics</span>
+          <span>音乐</span>
         </a>
       </li>
       
       <li>
-        <a href="/movies">
+        <a href="/video">
           
           <i class="fas fa-film" style="margin-top: -20px; zoom: 0.6;"></i>
           
-          <span>Movies</span>
+          <span>视频</span>
         </a>
       </li>
       
       <li>
-        <a href="/books">
+        <a href="/essay">
           
           <i class="fas fa-book" style="margin-top: -20px; zoom: 0.6;"></i>
           
-          <span>Books</span>
+          <span>随笔</span>
         </a>
       </li>
       
@@ -151,20 +169,20 @@
     <ul class="sub-nav menus_item_child ">
       
       <li>
-        <a href="/tags">
-          
-          <i class="fas fa-tags" style="margin-top: -20px; zoom: 0.6;"></i>
-          
-          <span>标签</span>
-        </a>
-      </li>
-      
-      <li>
         <a href="/categories">
           
           <i class="fas fa-bookmark" style="margin-top: -20px; zoom: 0.6;"></i>
           
           <span>类别</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/tags">
+          
+          <i class="fas fa-bookmark" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>标签</span>
         </a>
       </li>
       
@@ -351,27 +369,27 @@
 				  
 				   <i class="fa fas fa-music" style="position: absolute;left:50px" ></i>
 			      
-		          <span>Musics</span>
+		          <span>音乐</span>
                   </a>
                 </li>
               
                 <li>
 
-                  <a href="/movies " style="margin-left:75px">
+                  <a href="/video " style="margin-left:75px">
 				  
 				   <i class="fa fas fa-film" style="position: absolute;left:50px" ></i>
 			      
-		          <span>Movies</span>
+		          <span>视频</span>
                   </a>
                 </li>
               
                 <li>
 
-                  <a href="/books " style="margin-left:75px">
+                  <a href="/essay " style="margin-left:75px">
 				  
 				   <i class="fa fas fa-book" style="position: absolute;left:50px" ></i>
 			      
-		          <span>Books</span>
+		          <span>随笔</span>
                   </a>
                 </li>
               
@@ -412,21 +430,21 @@
               
                 <li>
 
-                  <a href="/tags " style="margin-left:75px">
-				  
-				   <i class="fa fas fa-tags" style="position: absolute;left:50px" ></i>
-			      
-		          <span>标签</span>
-                  </a>
-                </li>
-              
-                <li>
-
                   <a href="/categories " style="margin-left:75px">
 				  
 				   <i class="fa fas fa-bookmark" style="position: absolute;left:50px" ></i>
 			      
 		          <span>类别</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/tags " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-bookmark" style="position: absolute;left:50px" ></i>
+			      
+		          <span>标签</span>
                   </a>
                 </li>
               
@@ -644,21 +662,21 @@
                     <div class="post-statis col l4 hide-on-med-and-down" data-aos="zoom-in-right">
                         
 <div class="statis">
-    <span class="count"><a href="/">2</a></span>
+    <span class="count"><a href="/">3</a></span>
     <span class="name">文章</span>
 </div>
 
 
 
 <div class="statis">
-    <span class="count"><a href="/categories">1</a></span>
+    <span class="count"><a href="/categories">2</a></span>
     <span class="name">分类</span>
 </div>
 
 
 
 <div class="statis">
-    <span class="count"><a href="/tags">1</a></span>
+    <span class="count"><a href="/tags">2</a></span>
     <span class="name">标签</span>
 </div>
 
@@ -674,21 +692,21 @@
                                 <div class="post-statis hide-on-large-only" data-aos="zoom-in-right">
                                     
 <div class="statis">
-    <span class="count"><a href="/">2</a></span>
+    <span class="count"><a href="/">3</a></span>
     <span class="name">文章</span>
 </div>
 
 
 
 <div class="statis">
-    <span class="count"><a href="/categories">1</a></span>
+    <span class="count"><a href="/categories">2</a></span>
     <span class="name">分类</span>
 </div>
 
 
 
 <div class="statis">
-    <span class="count"><a href="/tags">1</a></span>
+    <span class="count"><a href="/tags">2</a></span>
     <span class="name">标签</span>
 </div>
 
@@ -874,7 +892,7 @@
                 name: '文章篇数',
                 type: 'line',
                 color: ['#6772e5'],
-                data: [0,0,0,0,0,0,0,0,0,0,0,2,0],
+                data: [0,0,0,0,0,0,0,0,0,0,0,2,1],
                 markPoint: {
                     symbolSize: 45,
                     color: ['#fa755a','#3ecf8e','#82d3f4'],
@@ -916,7 +934,7 @@
                 type: 'pie',
                 radius: '50%',
                 color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
-                data: [{"name":"测试","value":1}],
+                data: [{"name":"测试","value":1},{"name":"随笔","value":1}],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -940,7 +958,7 @@
         xAxis: [
             {
                 type: 'category',
-                data: ["测试"]
+                data: ["测试","随笔"]
             }
         ],
         yAxis: [
@@ -953,7 +971,7 @@
                 type: 'bar',
                 color: ['#82d3f4'],
                 barWidth : 18,
-                data: [1],
+                data: [1,1],
                 markPoint: {
                     symbolSize: 45,
                     data: [{
@@ -1128,6 +1146,12 @@
             </a>
             
             
+            
+            <a href="/tags/%E9%9A%8F%E7%AC%94/">
+                <span class="chip center-align waves-effect waves-light chip-default">随笔</span>
+            </a>
+            
+            
         </div>
     </div>
     
@@ -1258,7 +1282,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">144</span>
+                        class="white-color">198</span>
             
             
             
@@ -1512,14 +1536,6 @@ $(function () {
     
 
     <!-- 鼠标星星特效 -->
-     
-        <script type="text/javascript">
-            // 只在桌面版网页启用特效
-            var windowWidth = $(window).width();
-            if (windowWidth > 768) {
-                document.write('<script type="text/javascript" src="/libs/others/star.js"><\/script>');
-            }
-        </script>
     
 
     <!-- 动态标题 -->
