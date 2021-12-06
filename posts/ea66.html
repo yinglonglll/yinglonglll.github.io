@@ -1,0 +1,2765 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="linux规范">
+    <meta name="description" content="一、软件安装路径
+简述：Linux系统文件命名风格：mysql-source_5.7.3Linux与win文件结构不同，故不考虑分盘问题，只需考虑文件存放位置即可，其中Linux时约定大于配置
+
+文件夹命名详述
+优点
+
+Linux系统文件命">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>linux规范 | yinglonglll</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="yinglonglll" type="application/atom+xml">
+</head>
+
+
+<!-- 添加加载动画判断 -->
+
+
+
+
+<body>
+
+    <!-- 给hexo博客适配全局深色模式 ,css样式放在my.css中-->
+    <script>
+        if (localStorage.getItem('dark') === '1') {
+        document.body.classList.add('dark');
+        }
+        else if (new Date().getHours() >= 22 || new Date().getHours() < 7) {
+        document.body.classList.add('dark');
+        } 
+        else if (matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+        }
+    </script>
+    <a onclick="switchNightMode()" id="sma">
+        <i class="fa fa-moon-o" id="nightMode" aria-hidden="true"></i>
+    </a>
+    
+    <!-- END 给hexo博客适配全局深色模式 -->    
+
+    <!-- start webpushr tracking code --> 
+    <script>(function(w,d, s, id) {if(typeof(w.webpushr)!=='undefined') return;w.webpushr=w.webpushr||function(){(w.webpushr.q=w.webpushr.q||[]).push(arguments)};var js, fjs = d.getElementsByTagName(s)[0];js = d.createElement(s); js.id = id;js.async=1;js.src = "https://cdn.webpushr.com/app.min.js";
+    fjs.parentNode.appendChild(js);}(window,document, 'script', 'webpushr-jssdk'));
+    webpushr('setup',{'key':'BNgmq5FVdJ-KyqD36I-eH-mHzVd-IHkK8eYttWSgCh3CTz3e2okxqiuAoo9WKgf8E1Rx2n2HNqTa4Q3Oxlb-Nkk' });</script>
+    <!-- end webpushr tracking code -->
+
+    <!-- 添加加载动画 -->
+    
+
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">yinglonglll</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-shoe-prints" style="zoom: 0.6;"></i>
+      
+      <span>足迹</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/musics">
+          
+          <i class="fas fa-music" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>音乐</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/video">
+          
+          <i class="fas fa-film" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>视频</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/galleries">
+          
+          <i class="fas fa-image" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>相册</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/archives">
+          
+          <i class="fas fa-archive" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>档案</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-book-open" style="zoom: 0.6;"></i>
+      
+      <span>文章</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/categories">
+          
+          <i class="fas fa-bookmark" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>类别</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/tags">
+          
+          <i class="fas fa-bookmark" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>标签</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="" class="waves-effect waves-light">
+
+      
+      <i class="fas fas fa-link" style="zoom: 0.6;"></i>
+      
+      <span>链接库</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/friends">
+          
+          <i class="fas fa-address-book" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>友情链</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/toolbox">
+          
+          <i class="fas fa-toolbox" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>工具链</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/navigate">
+          
+          <i class="fas fa-location-arrow" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>导航链</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-list-ol" style="zoom: 0.6;"></i>
+      
+      <span>计划书</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/">
+          
+          <i class="far fa-edit" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>补全文章</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/">
+          
+          <i class="far fa-edit" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>添加云盘功能</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-house-user" style="zoom: 0.6;"></i>
+      
+      <span>实验室</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/">
+          
+          <i class="far fa-lightbulb" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>暂无实验</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-comment-dots" style="zoom: 0.6;"></i>
+      
+      <span>交流</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/about">
+          
+          <i class="fas fa-user-circle" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>关于我</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/contact">
+          
+          <i class="fas fa-comments" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>留言板</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">yinglonglll</div>
+        <div class="logo-desc">
+            
+            本站记录本人各种学习的旅途，用于巩固自我并启发后来人
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-shoe-prints"></i>
+			
+			足迹
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>
+
+                  <a href="/musics " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-music" style="position: absolute;left:50px" ></i>
+			      
+		          <span>音乐</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/video " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-film" style="position: absolute;left:50px" ></i>
+			      
+		          <span>视频</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/galleries " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-image" style="position: absolute;left:50px" ></i>
+			      
+		          <span>相册</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/archives " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-archive" style="position: absolute;left:50px" ></i>
+			      
+		          <span>档案</span>
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-book-open"></i>
+			
+			文章
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>
+
+                  <a href="/categories " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-bookmark" style="position: absolute;left:50px" ></i>
+			      
+		          <span>类别</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/tags " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-bookmark" style="position: absolute;left:50px" ></i>
+			      
+		          <span>标签</span>
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fas fa-link"></i>
+			
+			链接库
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>
+
+                  <a href="/friends " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-address-book" style="position: absolute;left:50px" ></i>
+			      
+		          <span>友情链</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/toolbox " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-toolbox" style="position: absolute;left:50px" ></i>
+			      
+		          <span>工具链</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/navigate " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-location-arrow" style="position: absolute;left:50px" ></i>
+			      
+		          <span>导航链</span>
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-list-ol"></i>
+			
+			计划书
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>
+
+                  <a href="/ " style="margin-left:75px">
+				  
+				   <i class="fa far fa-edit" style="position: absolute;left:50px" ></i>
+			      
+		          <span>补全文章</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/ " style="margin-left:75px">
+				  
+				   <i class="fa far fa-edit" style="position: absolute;left:50px" ></i>
+			      
+		          <span>添加云盘功能</span>
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-house-user"></i>
+			
+			实验室
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>
+
+                  <a href="/ " style="margin-left:75px">
+				  
+				   <i class="fa far fa-lightbulb" style="position: absolute;left:50px" ></i>
+			      
+		          <span>暂无实验</span>
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-comment-dots"></i>
+			
+			交流
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>
+
+                  <a href="/about " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-user-circle" style="position: absolute;left:50px" ></i>
+			      
+		          <span>关于我</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/contact " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-comments" style="position: absolute;left:50px" ></i>
+			      
+		          <span>留言板</span>
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.webp')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">linux规范</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    /* 适配目录 */
+    .toc-widget {
+        /* 修改前
+        width: 345px;
+        padding-left: 20px; */
+        width: 345px;
+        padding-left: 20px;
+        background-color: rgb(255, 255, 255,0.7);
+        border-radius: 10px;
+        box-shadow: 0 10px 35px 2px rgba(0, 0, 0, .15), 0 5px 15px rgba(0, 0, 0, .07), 0 2px 5px -5px rgba(0, 0, 0, .1) !important;
+    
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/linux/">
+                                <span class="chip bg-color">linux</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E8%A7%84%E8%8C%83/" class="post-category">
+                                规范
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2021-12-05
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2021-12-06
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    9k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    34 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+        <!-- 代码块折行 -->
+        <style type="text/css">
+            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
+        </style>
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="一、软件安装路径"><a href="#一、软件安装路径" class="headerlink" title="一、软件安装路径"></a>一、软件安装路径</h1><blockquote>
+<p>简述：<br>Linux系统文件命名风格：mysql-source_5.7.3<br>Linux与win文件结构不同，故不考虑分盘问题，只需考虑文件存放位置即可，其中Linux时约定大于配置</p>
+<details>
+<summary>文件夹命名详述</summary>
+优点
+<ol type="1">
+<li>Linux系统文件命名风格：mysql-source_5.7.3</li>
+<li>win的系统命名风格：mysqlSource_5.7.3</li>
+<li>建议window以独立对象分文件夹，虽然文件夹多但是win易操作，优点是隔离性强；</li>
+<li>建议Linux以种类分类，层级少，操作快，可能文件会稍微分离开不好找</li>
+</ol>
+</details>
+</blockquote>
+<h2 id="1-一级目录"><a href="#1-一级目录" class="headerlink" title="1. 一级目录"></a>1. 一级目录</h2><blockquote>
+<p>简述：通过基础的一级目录来认识多级目录中的作用，且常指根目录</p>
+<details>
+<summary>一级标题总结详述</summary>
+优点
+<ol type="1">
+<li>对强调点、疑惑点进行冗余的详细说明，为了加深理解</li>
+<li>对其他信息有关联的在此处说明，避免内容冗余</li>
+<li>Typora规范书写框架是面向大纲查询资料的</li>      
+</ol>
+</details>
+</blockquote>
+<h3 id="1-1-根目录"><a href="#1-1-根目录" class="headerlink" title="1.1 根目录"></a>1.1 根目录</h3><blockquote>
+<p>简述：linux一切皆文件(文件命令)，文件有权限(rwx)，权限设计系统(用户管理，谁能访问)，系统有磁盘(磁盘挂载)和进程(进程控制)；</p>
+</blockquote>
+<ul>
+<li>/bin：bin是Binary的缩写, 这个目录存放着最经常使用的命令。</li>
+<li>/boot： 这里存放的是启动Linux时使用的一些核心文件，包括一些连接文件以及镜像文件。</li>
+<li>/dev ： dev是Device(设备)的缩写, 存放的是Linux的外部设备，在Linux中访问设备的方式和访问文件的方式是相同的。</li>
+<li><strong>/etc： 这个目录用来存放所有的系统管理所需要的配置文件和子目录(环境配置/etc/profile</strong></li>
+<li><strong>/home：用户的主目录，在Linux中，每个用户都有一个自己的目录，一般该目录名是以用户的账号命名的。</strong></li>
+<li>/lib：这个目录里存放着系统最基本的动态连接共享库，其作用类似于Windows里的DLL文件。</li>
+<li>/lost+found：这个目录一般情况下是空的，当系统非法关机后，这里就存放了一些文件。</li>
+<li>/media：linux系统会自动识别一些设备，例如U盘、光驱等等，当识别后，linux会把识别的设备挂载到这个目录下。</li>
+<li>/mnt：系统提供该目录是为了让用户临时挂载别的文件系统的，我们可以将光驱挂载在/mnt/上，然后进入该目录就可以查看光驱里的内容了。</li>
+<li><strong>/opt：这是给主机额外安装软件所摆放的目录。比如你安装一个ORACLE数据库则就可以放到这个目录下。默认是空的</strong>。</li>
+<li>/proc：这个目录是一个虚拟的目录，它是系统内存的映射，我们可以通过直接访问这个目录来获取系统信息。</li>
+<li><strong>/root：该目录为系统管理员，也称作超级权限者的用户主目录。</strong></li>
+<li>/sbin：s就是Super User的意思，这里存放的是系统管理员使用的系统管理程序。</li>
+<li>/srv：该目录存放一些服务启动之后需要提取的数据。</li>
+<li>/sys：这是linux2.6内核的一个很大的变化。该目录下安装了2.6内核中新出现的一个文件系统 sysfs 。</li>
+<li><strong>/tmp：这个目录是用来存放一些临时文件的。 用完即丢的文件可以放在这个目录下</strong></li>
+<li><strong>/usr：这是一个非常重要的目录，用户的很多应用程序和文件都放在这个目录下，类似于windows下的program files目录。（usr是Unix Software Resource缩写：所有系统默认的软件都会放置到该目录下）</strong></li>
+<li>/usr/bin： 系统用户使用的应用程序。</li>
+<li>/usr/doc：这是Linux文档的大本营</li>
+<li>/usr/X11R6：存放X-Window的目录</li>
+<li>/usr/lib：存放一些常用的动态链接共享库和静态档案库；</li>
+<li>/usr/include：Linux下开发和编译应用程序需要的头文件，在这里查找；</li>
+<li>/usr/local：这是提供给一般用户的/usr目录，在这里安装软件最适合；</li>
+<li>/usr/sbin： 超级用户使用的比较高级的管理程序和系统守护程序。</li>
+<li>/usr/src： 内核源代码默认的放置目录。</li>
+<li>/usr/man：man在Linux中是帮助的同义词，这里就是帮助文档的存放目录；</li>
+<li>/usr/src：Linux开放的源代码就存在这个目录</li>
+<li><strong>/var：这个目录中存放着在不断扩充着的东西，我们习惯将那些经常被修改的目录放在这个目录下。包括各种日志文件。</strong></li>
+<li>/run：是一个临时文件系统，存储系统启动以来的信息。当系统重启时，这个目录下的文件应该被删掉或清除。</li>
+<li>**/www：存放服务器网站相关的资源，环境，网站的项目(Linux中无，宝塔有)</li>
+</ul>
+<h2 id="2-多级目录"><a href="#2-多级目录" class="headerlink" title="2. 多级目录"></a>2. 多级目录</h2><blockquote>
+<p>简述：Linux中常用的多级目录及建议安装路径</p>
+</blockquote>
+<h3 id="2-1-Linux存放路径"><a href="#2-1-Linux存放路径" class="headerlink" title="2.1 Linux存放路径"></a>2.1 Linux存放路径</h3><blockquote>
+<p>简述：建议安装路径</p>
+</blockquote>
+<ul>
+<li>/opt： 所有的压缩文件放此处，例如tar.gz、rpm</li>
+<li>/etc： 所有的配置文件放此处，自动安装中，配置文件的默认安装路径之一<ul>
+<li>/etc/soft-name/soft-name_port.conf： 自动安装中，配置文件的默认安装路径之一</li>
+<li>/etc/systemd/system： 所有自己配置的systemctl服务文件放此文件夹中</li>
+<li>/etc/profile： Linux的环境变量配置文件</li>
+</ul>
+</li>
+<li>/home/user-name： 个人的数据存放于此，例如halo博客存放于 /home/用户名/.halo 文件夹中</li>
+<li>/usr/local： 所有压缩包都解压到此处，同时也是软件的建议安装目录<ul>
+<li>/usr/lib/systemd/system：Linux系统的systemctl服务文件存放此处</li>
+</ul>
+</li>
+<li>/usr/share：放置的是一些共享数据</li>
+<li>/var/log：自动安装中，日志文件的默认安装路径之一</li>
+</ul>
+<h1 id="二、软件安装方式"><a href="#二、软件安装方式" class="headerlink" title="二、软件安装方式"></a>二、软件安装方式</h1><blockquote>
+<p>简述：主要分为 tar.gz包+ .Configure&amp;&amp;make&amp;&amp;make install、rpm包+yum在线安装</p>
+<details>
+<summary>一级标题总结详述</summary>
+优点
+<ol type="1">
+<li>对强调点、疑惑点进行冗余的详细说明，为了加深理解</li>
+<li>对其他信息有关联的在此处说明，避免内容冗余</li>
+<li>Typora规范书写框架是面向大纲查询资料的</li>      
+</ol>
+</details>
+</blockquote>
+<h2 id="1-下载命令"><a href="#1-下载命令" class="headerlink" title="1. 下载命令"></a>1. 下载命令</h2><blockquote>
+<p>简述：主要分为 手动下载、wget、curl、</p>
+</blockquote>
+<h2 id="2-安装命令"><a href="#2-安装命令" class="headerlink" title="2. 安装命令"></a>2. 安装命令</h2><blockquote>
+<p>简述：主要分为 tar&amp;&amp;.Configure&amp;&amp;make&amp;&amp;make install、rpm、yum</p>
+</blockquote>
+<h3 id="2-1-tar-gz或tar-xz"><a href="#2-1-tar-gz或tar-xz" class="headerlink" title="2.1  tar.gz或tar.xz"></a>2.1  tar.gz或tar.xz</h3><blockquote>
+<p>简述：</p>
+</blockquote>
+<ul>
+<li><p>安装</p>
+<ol>
+<li><p>./configure</p>
+<blockquote>
+<p>configure配置文件是一个可执行的脚本文件，原有功能中你设置啥它就有啥功能，</p>
+<p>在configure所处目录中，使用命令 ./configure –help 可以输出详细的选项列表。</p>
+</blockquote>
+<ul>
+<li><p>重要参数</p>
+<ol>
+<li><p>无configure配置–prefix参数：</p>
+<blockquote>
+<p>–prefix是配置安装目录，</p>
+<p>若不配置–prefix，安装后可执行文件默认放在/usr /local/bin，库文件默认放在/usr/local/lib，配置文件默认放在/usr/local/etc，其它的资源文件放在/usr /local/share，<strong>即文件分散</strong>；但放在/usr /local/bin中的<strong>可执行命令可以全局执行</strong>，相当于减少了配置全局变量的步骤，<em><em>但文件还是集中在 /usr/</em> 中</em>*</p>
+<p>若配置–prefix，如  ./configure –prefix=/usr/local/test ，安装后的所有资源文件都会被放在/usr/local/test目录中，不会分散到其他目录，<strong>即文件集中</strong>；若需<strong>全局调用还需配置全局变量</strong></p>
+</blockquote>
+<p> 优点：方便卸载软件或移植软件</p>
+<blockquote>
+<p>当某个安装的软件不再需要时，只须简单的删除该安装目录，就可以把软件卸载得干干净净；而移植软件只需拷贝整个目录到另外一个机器即可（相同的操作系统下）<br>当然要卸载程序，也可以在原来的make目录下用一次make uninstall，但前提是Makefile文件有uninstall命令</p>
+</blockquote>
+</li>
+<li><p>无configure导致无法配–prefix参数：</p>
+<blockquote>
+<p>若存在makefile文件则可执行make&amp;makefile，make install时配置 –prefix参数</p>
+<p>若不存在makefile文件则常规操作，删除时文件夹遍历删除即可</p>
+</blockquote>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>make</p>
+<blockquote>
+<p>它从configure配置生成的Makefile中读取指令，然后编译，make install 才可以执行安装</p>
+</blockquote>
+</li>
+<li><p>make install</p>
+<blockquote>
+<p>它也从Makefile中读取指令，安装到指定的位置，若不指定安装路径，则安装指定地方，以redis使用自带的 install_server.sh 来安装为例，但默认安装的软件会分散，导致不能一次性删除。</p>
+<pre class="line-numbers language-none"><code class="language-none">Selected config:
+Port           : 6379 
+&#x2F;&#x2F; 与yum等一样，配置文件在&#x2F;etc
+Config file    : &#x2F;etc&#x2F;redis&#x2F;6379.conf
+&#x2F;&#x2F; 与...一样
+Log file       : &#x2F;var&#x2F;log&#x2F;redis_6379.log
+&#x2F;&#x2F; 与..一样
+Data dir       : &#x2F;var&#x2F;lib&#x2F;redis&#x2F;6379
+&#x2F;&#x2F; 此处的bin中可执行文件可以全局调用，也就是make install安装执行文件的地方
+Executable     : &#x2F;usr&#x2F;local&#x2F;bin&#x2F;redis-server
+&#x2F;&#x2F; 同上
+Cli Executable : &#x2F;usr&#x2F;local&#x2F;bin&#x2F;redis-cli<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+</blockquote>
+<ul>
+<li><p>安装指定路径</p>
+  <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">// 第一种(建议)</span>
+<span class="token punctuation">.</span>/configure <span class="token operator">--</span>prefix<span class="token operator">=</span><span class="token operator">/</span>your<span class="token operator">/</span>dir
+make
+make install
+<span class="token comment">// 第二种：这种方法libtool会因为之前"./configure"的“--prefix”参数与预期安装的目录不匹配而发出警告</span>
+<span class="token punctuation">.</span>/configure
+make
+make install DESTDIR<span class="token operator">=</span><span class="token operator">/</span>your<span class="token operator">/</span>dir
+<span class="token comment">// 第三种</span>
+make prefix<span class="token operator">=</span><span class="token operator">/</span>your<span class="token operator">/</span>dir
+make install prefix<span class="token operator">=</span><span class="token operator">/</span>your<span class="token operator">/</span>dir<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>卸载</p>
+<ol>
+<li>configure有配置–prefix：直接删除目标安装文件或在MakeFile所处文件执行make uninstall</li>
+<li>configure无配置–prefix或仅有MakeFile：在MakeFile所处文件执行make uninstall</li>
+<li>无configure无MakeFile：直接遍历删除目标安装文件(因为不会文件分散)</li>
+</ol>
+</li>
+</ul>
+<h3 id="2-2-rpm"><a href="#2-2-rpm" class="headerlink" title="2.2 rpm"></a>2.2 rpm</h3><blockquote>
+<p>rpm是底层管理工具，适用于所有环境，不自动安装依赖性文件</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">// 用rpm安装wps软件，软件是rpm格式</span>
+rpm <span class="token operator">-</span>qp wps<span class="token operator">-</span>office<span class="token operator">-</span><span class="token number">10.1</span><span class="token number">.0</span><span class="token number">.5672</span><span class="token operator">-</span><span class="token number">1.</span>a21<span class="token punctuation">.</span>x86_64<span class="token punctuation">.</span>rpm
+         <span class="token operator">||</span>          <span class="token operator">||</span>        <span class="token operator">||</span>     <span class="token operator">||</span>
+       软件名称     软件版本 软件适用版本 <span class="token number">64</span>位
+<span class="token comment">// 发现安装wps时，缺少依赖性文件，不能安装</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</blockquote>
+<ul>
+<li><p>常用命令</p>
+  <pre class="line-numbers language-java" data-language="java"><code class="language-java">rpm   <span class="token operator">-</span>ivh             name<span class="token punctuation">.</span>rpm            ##安装 <span class="token punctuation">,</span><span class="token operator">-</span>v显示过程，<span class="token operator">-</span>h指定加密方式为hash
+      <span class="token operator">-</span>u               name<span class="token punctuation">.</span>rpm            ##升级软件版本，可rpm <span class="token operator">-</span><span class="token class-name">Uvh</span> n<span class="token punctuation">.</span>rpm 配 yum install <span class="token operator">-</span>y n<span class="token punctuation">.</span>rpm
+    	                                     <span class="token punctuation">(</span>即利用rpm来升级<span class="token punctuation">(</span>解压<span class="token punctuation">)</span>rpm包，用yum来安装，防yum在线下载<span class="token punctuation">)</span>
+      <span class="token operator">-</span>e               name                ##卸载
+      <span class="token operator">-</span>ql              name                ##查询软件生成文件
+      <span class="token operator">-</span>qlp             name<span class="token punctuation">.</span>rpm            ##查询软件安装后会生成什么文件
+      <span class="token operator">-</span>qa                                  ##查询系统中安装的所有软件名称
+      <span class="token operator">-</span>qa <span class="token operator">|</span>grep        name                ##查询软件是否安装
+      <span class="token operator">-</span>q               name                ##查看
+      <span class="token operator">-</span>qp              name<span class="token punctuation">.</span>rpm            ##查询软件安装包安装后的名字
+      <span class="token operator">-</span>qf              filename            ##查看filename属于那个安装包
+      <span class="token operator">-</span>ivh             name<span class="token punctuation">.</span>rpm <span class="token operator">--</span>force    ##强制安装，但不能忽略依赖性
+      <span class="token operator">-</span>ivh             name<span class="token punctuation">.</span>rpm <span class="token operator">--</span>nodeps   ##忽略依赖性并且强制安装
+      <span class="token operator">-</span>qi              name                ##查看软件信息
+      <span class="token operator">-</span><span class="token class-name">Kv</span>              name<span class="token punctuation">.</span>rpm            ##检测软件包是否被篡改
+      <span class="token operator">-</span>qp              name<span class="token punctuation">.</span>rpm <span class="token operator">--</span>scripts  ##检测软件在安装或卸载过程中执行的动作<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>  无依赖性文件时安装软件</p>
+  <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">// Kolourpaint与kolourpaint-lib（是kolourpaint的依赖性文件）相互依赖</span>
+<span class="token comment">// --nodes参数可以忽略软件的依赖性，直接进行安装。</span>
+rpm <span class="token operator">-</span>ivh kolourpaint<span class="token operator">-</span>libs<span class="token operator">-</span><span class="token number">4.10</span><span class="token number">.5</span><span class="token operator">-</span><span class="token number">4.</span>el7<span class="token punctuation">.</span>x86_64<span class="token punctuation">.</span>rpm <span class="token operator">--</span>nodeps<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+<li><p>rpm默认安装位置</p>
+  <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">// rpm默认安装路径：</span>
+<span class="token operator">/</span>etc   		 	  一些设置文件放置的目录：我们rpm安装的软件的配置文件在此处，例如mysql的my<span class="token punctuation">.</span>cnf，不同软件的
+                                       配置文件格式后缀可能不一样！
+<span class="token operator">/</span>usr<span class="token operator">/</span>bin    	  一些可执行文件：可全局命令直接调用放此处，及全局变量例如yum rpm命令都在此处，系统级别的执
+                                行命令则在<span class="token operator">/</span>usr<span class="token operator">/</span>sbin中
+<span class="token operator">/</span>usr<span class="token operator">/</span>lib    	  一些程序使用的动态函数库
+<span class="token operator">/</span>usr<span class="token operator">/</span>share<span class="token operator">/</span>doc    一些基本的软件使用手册与帮助文档
+<span class="token operator">/</span>usr<span class="token operator">/</span>share<span class="token operator">/</span>man    一些man page文件
+
+<span class="token comment">// rpm修改默认安装路径：</span>
+rpm <span class="token operator">-</span>i <span class="token operator">--</span>relocate <span class="token operator">/</span>usr<span class="token operator">/</span>bin<span class="token operator">=</span><span class="token operator">/</span>home<span class="token operator">/</span>easwy<span class="token operator">/</span>bin <span class="token operator">--</span>relocate <span class="token operator">/</span>usr<span class="token operator">/</span>share<span class="token operator">/</span>doc<span class="token operator">=</span><span class="token operator">/</span>home<span class="token operator">/</span>easwy<span class="token operator">/</span>doc ext3grep<span class="token operator">-</span><span class="token number">0.10</span><span class="token number">.0</span><span class="token operator">-</span><span class="token number">1.</span>el5<span class="token punctuation">.</span>rf<span class="token punctuation">.</span>i386<span class="token punctuation">.</span>rpm
+<span class="token comment">// 结果：ext3grep就会被安装到/home/easwy/bin目录中</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+</li>
+</ul>
+<h3 id="2-3-yum"><a href="#2-3-yum" class="headerlink" title="2.3 yum"></a>2.3 yum</h3><blockquote>
+<p>yum是上层管理工具（一个rpm包管理器），需搭建本地yum源，自动安装依赖性文件，yum安装和卸载的软件包格式包都是rpm格式，并且<strong>使用yum安装的软件，基本可由systemctl接管控制</strong></p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">// 用yum安装wps软件</span>
+yum <span class="token operator">-</span>ivh wps<span class="token operator">-</span>office<span class="token operator">-</span><span class="token number">10.1</span><span class="token number">.0</span><span class="token number">.5672</span><span class="token operator">-</span><span class="token number">1.</span>a21<span class="token punctuation">.</span>x86_64<span class="token punctuation">.</span>rpm
+<span class="token comment">// wps成功安装</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+</blockquote>
+<ul>
+<li><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/fuwentao/p/7277975.html">常用命令</a></p>
+  <pre class="line-numbers language-none"><code class="language-none">yum  -y  install       name.rpm            ##安装过程提示,选择全部为&quot;yes&quot;
+     -q  install       name.rpm            ##不显示安装的过程
+         reinstall     name.rpm            ##重新安装一个yum包
+         remove        name.rpm            ##表示卸载指定的rpm软件包
+         search        name.rpm            ##搜索yum包
+         info          name.rpm            ##显示yum包的信息
+         history       name.rpm            ##显示yum历史
+         repolist      name.rpm            ##显示已启用的yum存储库的列表
+         list          name.rpm            ##表示查找和显示软件包
+         list          installed           ##显示已安装的软件包
+         list                              ##查看所有的软件包
+         update        name.rpm            ##更新指定的软件包
+         update        check-update        ##检查可更新的程序
+         update                            ##更新所有的软件包
+         whatprovides  &quot;*bin&#x2F;nc&quot;           ##找出哪个yum包提供了一个特定的文件（例如：&#x2F;usr&#x2F;bin&#x2F;nc)）
+         clean         all                 ##清除软件包及旧的headers
+         clean         packages            ##清除缓存目录下的软件包
+         deplist       name.rpm            ##查看程序name.rpm依赖情况
+         provides      name.rpm            ##列出软件包提供哪些文件<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>默认安装路径：以nginx为例</p>
+  <pre class="line-numbers language-none"><code class="language-none">nginx的配置文件在&#x2F;etc&#x2F;nginx&#x2F;nginx.conf
+nginx自定义的配置文件放在&#x2F;etc&#x2F;nginx&#x2F;conf.d
+nginx项目文件存放在&#x2F;usr&#x2F;share&#x2F;nginx&#x2F;html&#x2F;
+nginx日志文件存放在&#x2F;var&#x2F;log&#x2F;nginx&#x2F;
+nginx其他一些安装文件都在&#x2F;etc&#x2F;nginx ，基本雷同yum
+
+文件安装路径 &#x2F;usr&#x2F;share&#x2F;locale中<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+<h2 id="3-启动命令"><a href="#3-启动命令" class="headerlink" title="3. 启动命令"></a>3. 启动命令</h2><blockquote>
+<p>简述：主要分为 systemctl、service命令来启动，Centos7之前版本的init.d、7及之后的systemctl系统服务器</p>
+</blockquote>
+<h3 id="3-1-chkconfig"><a href="#3-1-chkconfig" class="headerlink" title="3.1 chkconfig"></a>3.1 chkconfig</h3><blockquote>
+<p>本质：<br><strong>自动实现 /etc/init.d 机制</strong>：通过chkconfig的简易配置，自动将可执行脚本丢在/etc/init.d目录下，然后在/etc/rc.d/rc*.d中建立软链接、 <strong>init.d机制是按顺序依次启动每项服务</strong><br>/etc/init.d 机制：<br>Linux中有7种运行级别（可在/etc/inittab文件设置）：Liinux运行级别是根据当前计算器的状态自动变更的，每种运行级别分别对应着/etc/rc.d/rc[0<del>6].d这7个目录，每个目录分别存放着对应Linux系统运行级别加载时需要关闭或启动的服务。<br>（/etc/rc[0</del>6].d其实是/etc/rc.d/rc[0~6].d的软连接，，主要是为了保持和Unix的兼容性才做此策(保持rc *的文件层级与其他文件一致，不必再进入rc.d才能调用rc *.d）</p>
+<div align=left><img  src="Linux规范/Linux运行级别之init.png" /></div>
+</blockquote>
+<ul>
+<li><p>常用命令(service是服务命令，所以先接服务名，后接控制参数)</p>
+  <pre class="line-numbers language-none"><code class="language-none">ls                 &#x2F;etc&#x2F;init.d&#x2F;服务名  #&#x2F;etc&#x2F;init.d&#x2F;目录下必须有启动脚本
+chkconfig  --add   服务名              #添加服务，以便让chkconfig指令管理它
+chkconfig          服务名 on           #设置开机运行该服务，默认是设置2345等级开机运行服务
+chkconfig  --add   服务名              #添加指定的服务，让chkconfig指令管理它
+chkconfig  --del   服务名              #删除指定的服务，不再让chkconfig指令管理它
+chkconfig          服务名   on         #设置开机运行服务，需要先执行 --add 才能执行该命令
+chkconfig          服务名   off        #设置开机不运行服务，需要先执行 --add 才能执行该命令
+chkconfig --level  35 服务名 on        #设置服务在等级3和5时开机运行服务，默认设置2345等级是开机运行服务
+chkconfig --list                      #列出所有被chkconfig管理的服务
+                                      #等级0：关机
+                                      #等级1：单用户模式&#x2F;救援模式
+                                      #等级2：无网络连接的多用户命令行模式
+                                      #等级3：有网络连接的多用户命令行模式
+                                      #等级4：不可用
+                                      #等级5：带图形界面的多用户模式
+                                      #等级6：
+runlevel                              #查看当前系统的运行级别，因为Linux常为服务器，故一般Linux状态为3
+———————————————————————————————————————配置完chkconfig后手动调用————————————————————————————————
+service            服务名 start        #开启服务 
+service            服务名 stop         #关闭服务
+service            服务名 restart      #重启服务
+service            服务名 reload       #某服务重新加载配置文件<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+</li>
+</ul>
+<h3 id="3-2-systemctl系统服务器"><a href="#3-2-systemctl系统服务器" class="headerlink" title="3.2 systemctl系统服务器"></a>3.2 <a target="_blank" rel="noopener" href="http://www.yangjinxiang.com/article/83.html">systemctl系统服务器</a></h3><blockquote>
+<p>简述：systemctl服务文件配置时，<strong>不建议使用 pid文件的配置方式，建议使用定义好的 可执行文件命令</strong>，因为pid有时会无法生成，导致服务启动不来</p>
+<p>本质：<br><strong>据 (/usr)/lib/systemd/system/服务名.service 配置文件来实现的systemctl机制</strong>：是并发的启动机制，可充分利用多核机制，加速开启服务，优于init.d机制<br>systemctl机制：</p>
+<ol>
+<li><p>service配置文件：<br> [Unit]：unit 本身的说明，以及与其他相依 daemon 的设置，包括在什么服务之后才启动此 unit 之类的设置值；<br> [Unit Type]：[Unit Type]常为[Service]，也可 [Socket], [Timer], [Mount], [Path]，不同的 unit type 就得要使用相对应的设置项目。下面以 [Service] 为例设置。 [Service]主要在规范服务启动的脚本、环境配置文件文件名、重新启动的方式等等。<br> [Install] ：指将此 unit 安装到哪个 target 里面去，而wantBy参数的target指设置系统运行级别。</p>
+ <div align=left><img  src="Linux规范/Linux的systemctl的service配置文件的UnitType.png" /></div></li>
+<li><p>systemctl 运行级别：可类比init.d机制的运行级别判定</p>
+ <div align=left><img  src="Linux规范/Linux运行级别之systemctl.png" /></div></li>
+</ol>
+</blockquote>
+<ul>
+<li><p>常用命令(systemctl是控制命令，所以先接控制参数，再接服务名)</p>
+  <pre class="line-numbers language-none"><code class="language-none">————————————————————————————————配置完service文件后————————————————————————————————————————————
+systemctl start   服务名.service         #开启服务
+systemctl stop    服务名.service         #关闭服务
+systemctl restart 服务名.service         #重启服务
+systemctl reload  服务名.service         #某服务重新加载配置文件
+systemctl enable  服务名.service         #使某服务开机自动启动
+systemctl disable 服务名.service         #使某服务开机禁止启动
+systemctl list-units --type&#x3D;service     #显示所有已启动的服务
+systemctl status  服务名.service         #显示指定服务运行详细状态
+systemctl is-enabled 服务名.service      #检查服务是否配置为开机自动启动
+systemctl get-default                   #查看当前系统默认运行<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>service配置文件主要参数</p>
+<blockquote>
+<p>service配置文件的路径</p>
+<ul>
+<li>/etc/systemd/system/：管理员即用户依据主机系统的需求所建立的执行脚本，优先级最高</li>
+<li>/run/systemd/system/：系统执行过程中所产生的服务脚本，优先级次之</li>
+<li>(/usr)/lib/systemd/system：每个服务最主要的启动脚本设定，内含Linux系统自带的大量原生文件，最低</li>
+</ul>
+<p>service配置文件如何修改</p>
+<ul>
+<li>/usr/lib/systemd/system/vsftpd.service：官方释出的默认配置文件</li>
+<li>/etc/systemd/system/vsftpd.service.d/custom.conf：在 /etc/systemd/system 下面创建与配置文件相同文件名的目录，但是要加上 .d 的扩展名。然后在该目录下创建配置文件即可。另外，配置文件最好附文件名取名为 .conf 较佳！ 在这个目录下的文件会“累加其他设置”进入 /usr/lib/systemd/system/vsftpd.service 内喔！</li>
+<li>/etc/systemd/system/vsftpd.service.wants/*：此目录内的文件为链接文件，设置相依服务的链接。意思是启动了 vsftpd.service 之后，最好再加上这目录下面建议的服务。</li>
+<li>/etc/systemd/system/vsftpd.service.requires/*：此目录内的文件为链接文件，设置相依服务的链接。意思是在启动 vsftpd.service 之前，一定需要事先启动哪些服务的意思。</li>
+</ul>
+<p>结论：<br>若service配置文件存在官方默认配置文件，则service配置文件以客制化的形式创建，即不应该在原生上直接修改，在 /etc/systemd/system/ 中建立对应的 ../xxx.service.d/custom.conf;<br>若service配置文件不存在官方默认配置文件，则在 /etc/systemd/system/ 中建立对应的 xxx.service 的配置文件</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>【Unit】部分</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>设置参数</td>
+<td>参数意义说明</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>就是当我们使用systemctl list-units时，会输出给管理员看的简易说明 ！当然，使用systemctl status输出的此服务的说明，也是这个项目。</td>
+</tr>
+<tr>
+<td>Documentation</td>
+<td>这个项目在提供管理员能够进行进一步的文件查询的功能！提供的文件可以是如下的数据：Documentation=<a target="_blank" rel="noopener" href="http://www.../">http://www…</a> Documentation=man:sshd(8)；Documentation=file:/etc/ssh/sshd_config</td>
+</tr>
+<tr>
+<td>After</td>
+<td>说明此 unit 是在哪个 daemon 启动之后才启动的意思！基本上仅是说明服务启动的顺序而已，并没有强制要求里头的服务一定要启动后此 unit 才能启动。 以 sshd.service 的内容为例，该文件提到 After 后面有 network.target 以及 sshd-keygen.service，但是若这两个 unit 没有启动而强制启动 sshd.service 的话， 那么 sshd.service 应该还是能够启动的！这与 Requires 的设置是有差异的喔！</td>
+</tr>
+<tr>
+<td>Before</td>
+<td>与 After 的意义相反，是在什么服务启动前最好启动这个服务的意思。不过这仅是规范服务启动的顺序，并非强制要求的意思。</td>
+</tr>
+<tr>
+<td>Requires</td>
+<td>明确的定义此 unit 需要在哪个 daemon 启动后才能够启动！就是设置相依服务啦！如果在此项设置的前导服务没有启动，那么此 unit 就不会被启动！</td>
+</tr>
+<tr>
+<td>Wants</td>
+<td>与 Requires 刚好相反，规范的是这个 unit 之后最好还要启动什么服务比较好的意思！不过，并没有明确的规范就是了！主要的目的是希望创建让使用者比较好操作的环境。 因此，这个 Wants 后面接的服务如果没有启动，其实不会影响到这个 unit 本身！</td>
+</tr>
+<tr>
+<td>Conflicts</td>
+<td>代表冲突的服务！亦即这个项目后面接的服务如果有启动，那么我们这个 unit 本身就不能启动！我们 unit 有启动，则此项目后的服务就不能启动！ 反正就是冲突性的检查啦！</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>【Service】</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>设置参数</td>
+<td>参数意义说明</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>说明这个 daemon 启动的方式，会影响到 ExecStart 喔！一般来说，有下面几种类型 simple：默认值，这个 daemon 主要由 ExecStart 接的指令串来启动，启动后常驻于内存中。forking：由 ExecStart 启动的程序通过 spawns 延伸出其他子程序来作为此 daemon 的主要服务。原生的父程序在启动结束后就会终止运行。 传统的 unit 服务大多属于这种项目，例如 httpd 这个 WWW 服务，当 httpd 的程序因为运行过久因此即将终结了，则 systemd 会再重新生出另一个子程序持续运行后， 再将父程序删除。据说这样的性能比较好！！oneshot：与 simple 类似，不过这个程序在工作完毕后就结束了，不会常驻在内存中。dbus：与 simple 类似，但这个 daemon 必须要在取得一个 D-Bus 的名称后，才会继续运行！因此设置这个项目时，通常也要设置 BusName= 才行！idle：与 simple 类似，意思是，要执行这个 daemon 必须要所有的工作都顺利执行完毕后才会执行。这类的 daemon 通常是开机到最后才执行即可的服务！比较重要的项目大概是 simple, forking 与 oneshot 了！毕竟很多服务需要子程序 （forking），而有更多的动作只需要在开机的时候执行一次（oneshot），例如文件系统的检查与挂载啊等等的。</td>
+</tr>
+<tr>
+<td>EnvironmentFile</td>
+<td>可以指定启动脚本的环境配置文件！例如 sshd.service 的配置文件写入到 /etc/sysconfig/sshd 当中！你也可以使用 Environment= 后面接多个不同的 Shell 变量来给予设置！</td>
+</tr>
+<tr>
+<td>ExecStart</td>
+<td>就是实际执行此 daemon 的指令或脚本程序。你也可以使用 ExecStartPre （之前） 以及 ExecStartPost （之后） 两个设置项目来在实际启动服务前，进行额外的指令行为。 但是你得要特别注意的是，指令串仅接受“指令 参数 参数…”的格式，不能接受 &lt;, &gt;, &gt;&gt;, |, &amp; 等特殊字符，很多的 bash 语法也不支持喔！ 所以，要使用这些特殊的字符时，最好直接写入到指令脚本里面去！不过，上述的语法也不是完全不能用，亦即，若要支持比较完整的 bash 语法，那你得要使用 Type=oneshot 才行喔！ 其他的 Type 才不能支持这些字符。</td>
+</tr>
+<tr>
+<td>ExecStop</td>
+<td>与 systemctl stop 的执行有关，关闭此服务时所进行的指令，<br />通用杀死当前service配置文件主线程配置：ExecStop=/bin/kill -s QUIT $MAINPID</td>
+</tr>
+<tr>
+<td>ExecReload</td>
+<td>与 systemctl reload 有关的指令行为<br />通用杀死当前service配置文件主线程配置：ExecReload=/bin/kill -s HUP $MAINPID</td>
+</tr>
+<tr>
+<td>Restart</td>
+<td>当设置 Restart=1 时，则当此 daemon 服务终止后，会再次的启动此服务。举例来说，如果你在 tty2 使用文字界面登陆，操作完毕后登出，基本上，这个时候 tty2 就已经结束服务了。 但是你会看到屏幕又立刻产生一个新的 tty2 的登陆画面等待你的登陆！那就是 Restart 的功能！除非使用 systemctl 强制将此服务关闭，否则这个服务会源源不绝的一直重复产生！</td>
+</tr>
+<tr>
+<td>RemainAfterExit</td>
+<td>当设置为 RemainAfterExit=1 时，则当这个 daemon 所属的所有程序都终止之后，此服务会再尝试启动。这对于 Type=oneshot 的服务很有帮助！</td>
+</tr>
+<tr>
+<td>TimeoutSec</td>
+<td>若这个服务在启动或者是关闭时，因为某些缘故导致无法顺利“正常启动或正常结束”的情况下，则我们要等多久才进入“强制结束”的状态！</td>
+</tr>
+<tr>
+<td>KillMode</td>
+<td>可以是 process, control-group, none 的其中一种，如果是 process 则 daemon 终止时，只会终止主要的程序 （ExecStart 接的后面那串指令），如果是 control-group 时， 则由此 daemon 所产生的其他 control-group 的程序，也都会被关闭。如果是 none 的话，则没有程序会被关闭喔！</td>
+</tr>
+<tr>
+<td>RestartSec</td>
+<td>与 Restart 有点相关性，如果这个服务被关闭，然后需要重新启动时，大概要 sleep 多少时间再重新启动的意思。默认是 100ms （毫秒）</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>【install】</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>设置参数</td>
+<td>参数意义说明</td>
+</tr>
+<tr>
+<td>WantedBy</td>
+<td>这个设置后面接的大部分是 *.target unit ！意思是，这个 unit 本身是附挂在哪一个 target unit 下面的！一般来说，大多的服务性质的 unit 都是附挂在 multi-user.target 下面！</td>
+</tr>
+<tr>
+<td>Also</td>
+<td>当目前这个 unit 本身被 enable 时，Also 后面接的 unit 也请 enable 的意思！也就是具有相依性的服务可以写在这里呢！</td>
+</tr>
+<tr>
+<td>Alias</td>
+<td>进行一个链接的别名的意思！当 systemctl enable 相关的服务时，则此服务会进行链接文件的创建！以 multi-user.target 为例，这个家伙是用来作为默认操作环境 default.target 的规划， 因此当你设置用成 default.target 时，这个 /etc/systemd/system/default.target 就会链接到 /usr/lib/systemd/system/multi-user.target 啰！</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>service配置文件次要参数</p>
+  <pre class="line-numbers language-Service" data-language="Service"><code class="language-Service">[Service]
+&#x2F;&#x2F; pid文件的内容：pid文件为文本文件，内容仅有进程号如1089，其可防止进程启动多个副本。用cat命令可查到
+&#x2F;&#x2F; 以mysql为例，如何查找对应的pid文件使用命令ps -ef|grep mysql即可,--pid-file&#x3D;这个参数后面的值就是该应用
+&#x2F;&#x2F; 服务的pid文件路径
+PIDFile&#x3D;&#x2F;home&#x2F;tomcat&#x2F;apache-tomcat-7.0.47&#x2F;tomcat.pid 
+&#x2F;&#x2F; 常设为true，保证tmp私有安全
+PrivateTmp&#x3D;true <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+<h3 id="3-3-全局变量参考配置"><a href="#3-3-全局变量参考配置" class="headerlink" title="3.3 全局变量参考配置"></a>3.3 全局变量参考配置</h3><pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">export ERLANG_HOME&#x3D;&#x2F;usr&#x2F;local&#x2F;erlang
+export JAVA_HOME&#x3D;&#x2F;usr&#x2F;local&#x2F;jdk8-271
+
+export JRE_HOME&#x3D;&#x2F;usr&#x2F;local&#x2F;jdk8-271&#x2F;jre
+export CLASSPATH&#x3D;.:$&#123;JAVA_HOME&#125;&#x2F;lib:$&#123;JRE_HOME&#125;&#x2F;lib:$CLASSPATH
+export PATH&#x3D;$PATH:$&#123;JAVA_HOME&#125;&#x2F;bin:$&#123;JRE_HOME&#125;&#x2F;bin
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="4-备份命令"><a href="#4-备份命令" class="headerlink" title="4. 备份命令"></a>4. <a target="_blank" rel="noopener" href="https://www.cnblogs.com/youxia/p/linux013.html">备份命令</a></h2><blockquote>
+<p>简述：经过测试，备份命令没有问题</p>
+</blockquote>
+<ul>
+<li>备份命令：tar cvpzf backup.tgz –exclude=/proc –exclude=/mnt –exclude=/sys –exclude=/backup.tgz /</li>
+<li>还原命令： dd if=/dev/sdb1 of=/dev/sda1 或  tar xvpfz backup.tgz -C /</li>
+</ul>
+<h2 id="5-个人建议"><a href="#5-个人建议" class="headerlink" title="5. 个人建议"></a>5. 个人建议</h2><blockquote>
+<p>简述：结合个人实际使用情况的建议</p>
+</blockquote>
+<h3 id="5-1-下载命令"><a href="#5-1-下载命令" class="headerlink" title="5.1 下载命令"></a>5.1 下载命令</h3><ul>
+<li>手动安装：利用三方下载工具去官方或镜像下载压缩包，速度较快</li>
+</ul>
+<h3 id="5-1-安装命令"><a href="#5-1-安装命令" class="headerlink" title="5.1 安装命令"></a>5.1 安装命令</h3><blockquote>
+<p>约定大于配置</p>
+</blockquote>
+<ul>
+<li> tar&amp;&amp;.Configure&amp;&amp;make&amp;&amp;make install：此处 .Configure是无参数配置，主要是避免冗余的环境变量配置操作</li>
+<li>rpm+yum：利用手动下载好的rpm压缩包，先通过rpm -Uvh 升级压缩包，再通过yum -y 在线安装，解决依赖问题</li>
+</ul>
+<h3 id="5-3-启动命令"><a href="#5-3-启动命令" class="headerlink" title="5.3 启动命令"></a>5.3 启动命令</h3><ul>
+<li>配置systtemctl服务文件：个人服务统一在 /etc/systemd/system 中配置，设置开机自启，保证常用服务时刻开启</li>
+<li>systemctl服务文件禁止pid设置：禁止以pid文件来控制服务，因为开启服务时可能无法生成pid文件</li>
+</ul>
+<h1 id="三、Linux常用命令"><a href="#三、Linux常用命令" class="headerlink" title="三、Linux常用命令"></a>三、Linux常用命令</h1><blockquote>
+<p>简述：主要为 组合的常用命令</p>
+</blockquote>
+<h3 id="5-2-Vim编辑器"><a href="#5-2-Vim编辑器" class="headerlink" title="5.2 Vim编辑器"></a>5.2 Vim编辑器</h3><ul>
+<li><p>Vim的状态模式</p>
+<blockquote>
+<p>vim操作：插入模式进行文本操作、编辑模式进行命令操作，想退出就先到编辑模式保存退出；用Esc或i来切换两者</p>
+</blockquote>
+<ol>
+<li><p>命令模式( Command mode) (默认模式)</p>
+<blockquote>
+<p>用户刚刚启动Vi/Vim ,便进入了命令模式。<br>此状态下敲击键盘动作会被Vim识别为命令,而非输入字符。比如我们此时按下i ,并不会输入一个字符, i被当作了一个命令。<br>以下是常用的几个命令:</p>
+<ol>
+<li>“i”切换到输入模式,以输入字符。</li>
+<li>“x”删除当前光标所在处的字符。</li>
+<li>“:”切换到底线命令模式,以在最底一行输入命令。</li>
+<li>“u”撤销</li>
+<li>ctrl+r：重做上一个动作</li>
+<li>set nu 编辑模式显示设置文本行号</li>
+</ol>
+<p>若想要编辑文本:启动Vim,进入了命令模式,按下i,切换到输入模式。<br>命令模式只有一些最基本的命令,因此仍要依靠底线命令模式输入更多命令。</p>
+</blockquote>
+</li>
+<li><p>输入模式( Insert mode )</p>
+<blockquote>
+<p>在命令模式下按下i就进入了输入模式。<br>在输入模式中，可以使用以下按键：</p>
+<ol>
+<li>字符按键以及Shift组合，输入字符</li>
+<li>数字 + ENTER，回车键，指定换行，ENTER直接换行</li>
+<li>BACK SPACE，退格键，删除光标前一个字符</li>
+<li>DEL，删除键，删除光标后一个字符</li>
+<li>方向键，在文本中移动光标</li>
+<li>HOME/END，移动光标到行首/行尾</li>
+<li>Page Up/Page Down，上/下翻页</li>
+<li>Insert，切换光标为输入/替换模式，光标将变成竖线/下划线</li>
+<li>ESC，退出输入模式，切换到命令模式</li>
+</ol>
+</blockquote>
+</li>
+<li><p>底线命令模式( Lastline mode )</p>
+<blockquote>
+<p>在命令模式下按下:（英文冒号”:”）就进入了底线命令模式。<br>底线命令模式可以输入单个或多个字符的命令，可用的命令非常多。<br>在底线命令模式中，基本的命令有（已经省略了冒号）：<br>q 退出程序<br>w 保存文件</p>
+<p>按ESC键可随时退出底线命令模式。</p>
+</blockquote>
+</li>
+</ol>
+</li>
+</ul>
+<h3 id="5-3-常用组合命令"><a href="#5-3-常用组合命令" class="headerlink" title="5.3 常用组合命令"></a>5.3 常用组合命令</h3><blockquote>
+<p>Tab补全命名，前端vue也可以，</p>
+<p>vim模式下，光标在首行，从命令模式进入底线命令模式，输入 .,$d 可以清空内容</p>
+</blockquote>
+<h4 id="5-3-1-文件管理"><a href="#5-3-1-文件管理" class="headerlink" title="5.3.1 文件管理"></a>5.3.1 文件管理</h4><ul>
+<li><p>ls -al ：查看全部的文件包括隐藏文件的属性和权限</p>
+<blockquote>
+<p>-a  #参数: all ,查看全部的文件,包括隐藏文件</p>
+<p>-l  #参数列出所有的文件,包含文件的属性和权限,没有隐藏文件</p>
+</blockquote>
+</li>
+<li><p>mkdir -p test2/test3/test4：用-p递归创建层级目录<br>  rmdir -p test2/test3/test4：用-p递归删除文件</p>
+<blockquote>
+<p>rmdir仅能删除空的目录,如果下面存在文件,需要先删除文件,递归删除多个目录-p参数即可</p>
+<p><strong>即到文件夹下执行rm，再退出文件夹删除文件夹rmdir</strong></p>
+</blockquote>
+</li>
+<li><p>rm -rf install.sh/：删除系统中的install.sh文件或目录</p>
+<p>  (在公司开发的时候千万不要使用 rm 小心手误)</p>
+<blockquote>
+<p>-f  #忽略不存在的文件,不会出现警告,强制删除!*</p>
+<p>-r  #递归删除目录!</p>
+<p>-i  #互动,删除询问是否删除</p>
+</blockquote>
+</li>
+<li><p>cp install.sh cqhstudy：将当前目录下的install.sh 复制到cqhstudy文件夹中</p>
+</li>
+<li><p>mv install.sh cqhstudy：移动文件*</p>
+<p>  mv cqhstudy cqhstudy2：重命名文件夹名</p>
+<blockquote>
+<p>-f  #强制</p>
+<p>-u #只替换已经更新过的文件</p>
+</blockquote>
+</li>
+<li><p>touch [file]：创建文件</p>
+</li>
+<li></li>
+</ul>
+<h4 id="5-3-2-文件属性"><a href="#5-3-2-文件属性" class="headerlink" title="5.3.2 文件属性"></a>5.3.2 文件属性</h4><ul>
+<li><p>chgrp[选项] [group] file|dir</p>
+<blockquote>
+<p>chgrp root file1                                #表示将file1的属组修改为root组</p>
+<p>chgrp root /usr/local/nginx              #表示将nginx目录的属组级联修改为root组</p>
+</blockquote>
+<p>  chown [选项] [ower:group]  file|dir</p>
+<blockquote>
+<p>chown   nginx text.text                #表示将text文件的所有者改为nginx用户<br>chown   nginx:nginx text.text      #表示将text文件的所有者以及属组改为nginx用户和nginx组<br>chown  -R nginx.nginx  /usr/local/nginx/        #表示将nginx目录及目录下的所有文件的属主属组改为nginx用户和nginx组</p>
+<p>-R ：表示级联更改，当文件名是一个目录时，-R就能级联更改该目录和目录下的所有文件</p>
+<p>（注意：owen:group 之间的冒号可以形成.点号，可以只有owner表示只修改属主，默认也是修改owner，如果想同时修改属组，那就owen:group都写上，一般的，我们更加习惯使用chown命令同时修改属主和属组一步到位。）</p>
+</blockquote>
+<p>  chown chchom 777 file|dir：赋予所有用户可读可执行</p>
+</li>
+<li><p>cat [file]：正序全文显示)</p>
+<p>  tac [file]：倒序全文显示 </p>
+<p>  nl [file]：正序全文显示有顺序</p>
+<p>  more [file]：单向正序查看</p>
+<p>  less [file]：双向逐页显示</p>
+<p>  head  -n [行数] [file]：只看file的前n行</p>
+<p>  tail  -n [行数] [file]：只看file的末n行</p>
+<blockquote>
+<p>tail适合查看日志命令：tail -fn 200 [logFile]</p>
+</blockquote>
+</li>
+</ul>
+<h4 id="5-3-3-多功能查询"><a href="#5-3-3-多功能查询" class="headerlink" title="5.3.3 多功能查询"></a>5.3.3 多功能查询</h4><blockquote>
+<p>（先用Vim进入命令模式，再按英文冒号”:”进入 底线命令模式）</p>
+<p>空格、pagedown：下一页</p>
+<p>pageup：上一页</p>
+<p>q ：退出</p>
+<p>n：搜索下一个</p>
+<p>N：上一个  </p>
+<p>按“/” + 关键字，向下检索关键字</p>
+<p>按“?” + 关键字，向上检索关键字</p>
+</blockquote>
+<h4 id="5-3-4-软链接和硬链接"><a href="#5-3-4-软链接和硬链接" class="headerlink" title="5.3.4 软链接和硬链接"></a>5.3.4 软链接和硬链接</h4><ul>
+<li><p>创建链接：ln</p>
+</li>
+<li><p>创建文件：touch</p>
+</li>
+<li><p>输出字符串：echo</p>
+<blockquote>
+<p>touch f1 #创建一个f1文件</p>
+<p>ln f1 f2  #根据文件 f1 创建 f2 硬链接</p>
+<p>ln -s f1 f3  #根据文件 f1 创建 f3 软链接</p>
+<p>适用场景：类比window的快捷键：软链接；硬链接：备份</p>
+</blockquote>
+</li>
+</ul>
+<h4 id="5-3-5-用户管理"><a href="#5-3-5-用户管理" class="headerlink" title="5.3.5 用户管理"></a>5.3.5 用户管理</h4><h4 id="5-3-6-磁盘管理"><a href="#5-3-6-磁盘管理" class="headerlink" title="5.3.6 磁盘管理"></a>5.3.6 磁盘管理</h4><ul>
+<li><p>df -h：(列出文件系统整体的磁盘使用量，以M为单位) </p>
+<p>  du -a：(检查当前目录磁盘空间使用量，-a详细到目录中所有的文件)</p>
+</li>
+<li><p>mount /dev/kuangshen  /mnt/kuangshen：将外部设备的kuangshen挂载到mnt目录下，来实现访问，因为不能直接访问外部设备，故需挂载</p>
+<p>  umount-f [挂载位置]：强制卸载挂载目标</p>
+</li>
+</ul>
+<h4 id="5-3-7-进程管理"><a href="#5-3-7-进程管理" class="headerlink" title="5.3.7 进程管理"></a>5.3.7 进程管理</h4><ul>
+<li><p>ps -aux | grep mysql  查看mysql相关进程</p>
+<blockquote>
+<p>ps 查看当前系统中正在执行的各种进程的信息！<br>ps- xx：<br>  -a 显示当前终端所有的进程信息<br>  -u 以用户的信息显示进程<br>  -x 显示后台运行进程的参数</p>
+<p>ps -aux ：查看所有进程</p>
+<p>|：在Linux中这个叫管道符   A|B</p>
+<p>grep：查找文件中符合条件的字符串</p>
+</blockquote>
+</li>
+<li><p>ps -ef | grep mysql：通过进程查关键字进程信息</p>
+</li>
+<li><p>pstree -pu：以进程树结构的形式来查看父进程的信息</p>
+<blockquote>
+<p>pstree -xx </p>
+<p>​    -p 显示父id </p>
+<p>​    -u 显示用户组</p>
+</blockquote>
+</li>
+<li><p>kill -9 进程的pid：强制结束该进程，用于端口号非法占用，死循环等</p>
+</li>
+<li><p>netstat  -anp  | grep  端口号：查询指定端口号有无被占用，通过网络状态查网络端口号信息</p>
+<blockquote>
+<p>端口号信息包含PID、ProgramName</p>
+<p>anp（all的net的port）</p>
+</blockquote>
+</li>
+</ul>
+<h4 id="5-3-8-其他"><a href="#5-3-8-其他" class="headerlink" title="5.3.8 其他"></a>5.3.8 其他</h4><pre class="line-numbers language-none"><code class="language-none">&#x2F;&#x2F; 查看文件或文件夹的文件属性
+ls -lhi （文件或文件夹）
+&#x2F;&#x2F; 查看文件或文件夹更多文件属性
+stat [文件或文件夹]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h3 id=""><a href="#" class="headerlink" title=""></a></h3>
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">yinglonglll</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://yinglonglll.github.io/posts/ea66.html">http://yinglonglll.github.io/posts/ea66.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">yinglonglll</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/linux/">
+                                    <span class="chip bg-color">linux</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'hdO23UKnJJP3UWW6H70jzwov-gzGzoHsz',
+        appKey: 'MbaKnMNVq2FupWTOJPYlBahW',
+        notify: 'true' === 'true',
+        verify: 'true' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'mm',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: '留下你的足迹...'
+    });
+</script>
+
+<!--酷Q推送-->
+
+<!-- 直达评论 -->
+<div id="to_comment" class="comment-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#vcomments" title="直达评论">
+        <i class="fas fa-comments"></i>
+    </a>
+</div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/posts/63bb.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/6.webp" class="responsive-img" alt="Skill规范">
+                        
+                        <span class="card-title">Skill规范</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-12-05
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E8%A7%84%E8%8C%83/" class="post-category">
+                                    规范
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Skill/">
+                        <span class="chip bg-color">Skill</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/cae2.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/14.webp" class="responsive-img" alt="windows规范">
+                        
+                        <span class="card-title">windows规范</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-05
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E8%A7%84%E8%8C%83/" class="post-category">
+                                    规范
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/windows/">
+                        <span class="chip bg-color">windows</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE' || selection.getRangeAt(0).commonAncestorContainer.nodeName === 'CODE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: yinglonglll<br />'
+            + '文章作者: yinglonglll<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 对页面进行仿信纸样式修饰essay -->
+
+<style> 
+    .ititle { 
+        margin: 15px 0; 
+        text-align:center; 
+        font-family: 'Architects Daughter', cursive; 
+    } .ipage { 
+        line-height: 30px; 
+        margin: 0 auto; 
+        padding: 15px 32px 29px; 
+        background-color: #f9f9f9; 
+        box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.26); 
+        -moz-border-radius-bottomleft: 20px 500px; 
+        -moz-border-radius-bottomright: 500px 30px; 
+        -moz-border-radius-topright: 5px 100px; 
+        -webkit-border-bottom-left-radius: 20px 500px; 
+        -webkit-border-bottom-right-radius: 64px 10px; 
+        -webkit-border-top-right-radius: 5px 100px; 
+        border-bottom-left-radius: 20px 500px; 
+        border-bottom-right-radius: 64px 10px; 
+        border-top-right-radius: 5px 100px; 
+        -webkit-background-size: 100% 30px; 
+        -moz-box-shadow: 0 2px 10px 1px rgba(0, 0, 0, 0.2); 
+        -webkit-box-shadow: 0 2px 10px 1px rgba(0, 0, 0, 0.2); 
+        text-shadow: 0 1px 0 #F6EF97; 
+        position: relative; 
+    } 
+    .izhengwen { 
+        position: relative; 
+        top: 0; 
+        left: 0; 
+        z-index: 2; 
+        height: auto; 
+        background: repeating-linear-gradient(to bottom, #f9f9f9, #f9f9f9 31px, #6BA2D8 1px, #f9f9f9); background-size: 100% 32px;
+    } 
+    #articleContent p { 
+        margin: 0 
+    } 
+    .ititle { 
+        font-family: 'Architects Daughter', cursive; 
+        font-size: 1.45rem!important; padding: 10px auto; 
+    } 
+    .izhengwen p { 
+        position: relative; 
+        line-height: 2.2rem!important; 
+        text-indent: 2em; 
+        font-family: 'Architects Daughter', cursive!important; 
+        font-size: 1.45rem!important; 
+    } 
+    .ipage::before { 
+        content: " "; display: inline-block; 
+        position: absolute; top: 0px; bottom: 0; 
+        right: 52px; z-index: 4; 
+        width: 4px; 
+        height: 100%; 
+        border-left: 1px solid #fca1a1; 
+    } 
+    .izhengwen p:nth-child(odd):before { 
+        content: " "; 
+        display: inline-block; 
+        position: absolute; 
+        top: 0; left: -16px; z-index: 3; 
+        width: 24px; height: 24px; 
+        background-color: #fff; 
+        -webkit-border-radius: 50%; 
+        -moz-border-radius: 50%; 
+        border-radius: 50%; 
+        box-shadow: inset 0px 2px 5px 0px rgba(0, 0, 0, 0.26); 
+    } 
+    .ipage:after { 
+        content: " "; 
+        display: inline-block; 
+        position: absolute; 
+        top: 0; 
+        bottom: 0; 
+        left: 52px; 
+        z-index: 3; 
+        width: 4px; 
+        height: 100%; 
+        border-left: 4px double #fca1a1; 
+    } 
+    .ipage p { 
+        padding: 0 2em; 
+        color: #333!important; 
+    } 
+    body.dark .ipage { 
+        opacity: 0.85; 
+    } 
+    /*小屏幕下(手机类)的样式*/ 
+    @media only screen and (max-width: 600px) { 
+        .ipage { 
+            padding: 15px 23px 29px; 
+        } 
+        .ipage:after { 
+            left: 36px; 
+        } 
+        .ipage::before { 
+            right: 36px; 
+        } 
+        .ipage p { 
+            padding: 0 0.9em; 
+        } 
+    } 
+</style>
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card">
+        <!-- <div class="toc-widget card" style="background-color: white;"> 解决黑夜模式下目录仍固定白色背景的情况-->
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="5198999470"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='list'
+                   preload='auto'
+                   volume='0.6'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="/libs/aplayer/Meting.min.js"></script>
+
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2021</span>
+            
+            <a href="/about" target="_blank">yinglonglll</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">13.4k</span>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+                <span id="sitetime"> Loading ...</span>
+                <script>
+                    var calcSiteTime = function () {
+                        var seconds = 1000;
+                        var minutes = seconds * 60;
+                        var hours = minutes * 60;
+                        var days = hours * 24;
+                        var years = days * 365;
+                        var today = new Date();
+                        var startYear = "2021";
+                        var startMonth = "11";
+                        var startDate = "28";
+                        var startHour = "0";
+                        var startMinute = "0";
+                        var startSecond = "0";
+                        var todayYear = today.getFullYear();
+                        var todayMonth = today.getMonth() + 1;
+                        var todayDate = today.getDate();
+                        var todayHour = today.getHours();
+                        var todayMinute = today.getMinutes();
+                        var todaySecond = today.getSeconds();
+                        var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                        var diff = t2 - t1;
+                        var diffYears = Math.floor(diff / years);
+                        var diffDays = Math.floor((diff / days) - diffYears * 365);
+
+                        // 区分是否有年份.
+                        var language = 'zh-CN';
+                        if (startYear === String(todayYear)) {
+                            document.getElementById("year").innerHTML = todayYear;
+                            var daysTip = 'This site has been running for ' + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                daysTip = '本站已运行 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                daysTip = '本站已運行 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = daysTip;
+                        } else {
+                            document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                            var yearsAndDaysTip = 'This site has been running for ' + diffYears + ' years and '
+                                + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                yearsAndDaysTip = '本站已运行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                yearsAndDaysTip = '本站已運行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = yearsAndDaysTip;
+                        }
+                    }
+
+                    calcSiteTime();
+                </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis"><!-- 
+    <a href="https://github.com/yinglonglll" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:948706806@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=948706806" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 948706806" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+
+
+    <a href="https://space.bilibili.com/11388935" class="tooltipped" target="_blank" data-tooltip="在B站上关注我: " data-position="top" data-delay="50">
+        <i class="fas fa-play-circle"></i>
+    </a>
+ -->
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- 数字雨 -->
+    <!-- <canvas id="canvas" width="1440" height="900" ></canvas> -->
+    <script type="text/javascript" src="/js/DigitalRain.js"></script>
+
+    
+
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+    <!-- 动态标题 -->
+     
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var OriginTitile = document.title,st;
+            document.addEventListener("visibilitychange", function () {
+            document.hidden ? (document.title = "w(ﾟДﾟ)w页面崩溃啦~", clearTimeout(st)) : (document.title =
+            "╰(*°▽°*)╯页面恢复啦~", st = setTimeout(function () {
+            document.title = OriginTitile
+            }, 3e3))
+            })
+        </script>
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+<script>(function (w, d, s, id) {
+            if (typeof (w.webpushr) !== 'undefined') return; w.webpushr = w.webpushr || function () { (w.webpushr.q = w.webpushr.q || []).push(arguments) }; var js, fjs = d.getElementsByTagName(s)[0]; js = d.createElement(s); js.id = id; js.async = 1; js.src = "https://cdn.webpushr.com/app.min.js";fjs.parentNode.appendChild(js);}(window, document, 'script', 'webpushr-jssdk'));webpushr('setup', { 'key': 'BNgmq5FVdJ-KyqD36I-eH-mHzVd-IHkK8eYttWSgCh3CTz3e2okxqiuAoo9WKgf8E1Rx2n2HNqTa4Q3Oxlb-Nkk' });</script></body>
+
+</html>
