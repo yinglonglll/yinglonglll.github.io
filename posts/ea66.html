@@ -5,13 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="linux规范">
-    <meta name="description" content="一、软件安装路径
-简述：Linux系统文件命名风格：mysql-source_5.7.3Linux与win文件结构不同，故不考虑分盘问题，只需考虑文件存放位置即可，其中Linux时约定大于配置
-
-文件夹命名详述
-优点
-
-Linux系统文件命">
+    <meta name="description" content="摘要：linux规范">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -23,7 +17,7 @@ Linux系统文件命">
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>linux规范 | yinglonglll</title>
+    <title>Linux规范 | yinglonglll</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -617,12 +611,12 @@ Linux系统文件命">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.webp')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.webp')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">linux规范</h1>
+                    <h1 class="description center-align post-title">Linux规范</h1>
                 </div>
             </div>
         </div>
@@ -778,21 +772,21 @@ Linux系统文件命">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-12-06
+                    2022-02-15
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    9k
+                    9.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    34 分
+                    35 分
                 </div>
                 
 
@@ -1308,10 +1302,10 @@ export PATH&#x3D;$PATH:$&#123;JAVA_HOME&#125;&#x2F;bin:$&#123;JRE_HOME&#125;&#x2
 <li>手动安装：利用三方下载工具去官方或镜像下载压缩包，速度较快</li>
 </ul>
 <h3 id="5-1-安装命令"><a href="#5-1-安装命令" class="headerlink" title="5.1 安装命令"></a>5.1 安装命令</h3><blockquote>
-<p>约定大于配置</p>
+<p>约定大于配置，同时保证一键删除</p>
 </blockquote>
 <ul>
-<li> tar&amp;&amp;.Configure&amp;&amp;make&amp;&amp;make install：此处 .Configure是无参数配置，主要是避免冗余的环境变量配置操作</li>
+<li> tar&amp;&amp;.Configure&amp;&amp;make&amp;&amp;make install：此处 .Configure是有参配置–prefix /usr/local/xxx ，同时将安装目录下的可执行文件 创建软连接放置到 /usr/bin 中以全局调用</li>
 <li>rpm+yum：利用手动下载好的rpm压缩包，先通过rpm -Uvh 升级压缩包，再通过yum -y 在线安装，解决依赖问题</li>
 </ul>
 <h3 id="5-3-启动命令"><a href="#5-3-启动命令" class="headerlink" title="5.3 启动命令"></a>5.3 启动命令</h3><ul>
@@ -1496,7 +1490,26 @@ stat [文件或文件夹]<span aria-hidden="true" class="line-numbers-rows"><spa
 
 
 
-<h3 id=""><a href="#" class="headerlink" title=""></a></h3>
+<h3 id=""><a href="#" class="headerlink" title=""></a></h3><h1 id="四、Linux系统安装"><a href="#四、Linux系统安装" class="headerlink" title="四、Linux系统安装"></a>四、Linux系统安装</h1><blockquote>
+<p>简述：个人使用建议：archLinux+dwm桌面(极简推荐) 或 archLinux+kad桌面(类win)</p>
+</blockquote>
+<h2 id="1-实现方式"><a href="#1-实现方式" class="headerlink" title="1. 实现方式"></a>1. 实现方式</h2><h3 id="1-1-双系统Win-Linux"><a href="#1-1-双系统Win-Linux" class="headerlink" title="1.1 双系统Win+Linux"></a>1.1 双系统Win+Linux</h3><blockquote>
+<p>简述：大固态硬盘1T装主用系统Win，小固态硬盘512GB装次用系统Linux，达到解耦目的。<br>其中数据文件尽量存放在自己的硬盘中，分区的时候时，切勿互放数据。因为系统迁移的前提是目标硬盘先清空，故不先规定好还需备份目标硬盘的文件</p>
+</blockquote>
+<h3 id="1-2-虚拟机VM-Linux"><a href="#1-2-虚拟机VM-Linux" class="headerlink" title="1.2 虚拟机VM(Linux)"></a>1.2 虚拟机VM(Linux)</h3><blockquote>
+<p>简述：小固态512GB装系统，大固态1T装软件应用，达到解耦目的。</p>
+</blockquote>
+<h2 id="2-安装方式"><a href="#2-安装方式" class="headerlink" title="2. 安装方式"></a>2. 安装方式</h2><h3 id="2-1-手动安装"><a href="#2-1-手动安装" class="headerlink" title="2.1 手动安装"></a>2.1 手动安装</h3><blockquote>
+<p>因特网络先连<br>更新系统时间<br>硬盘分区要创建<br>格式化挂载点</p>
+<p>分区顺次挂载<br>切国内镜像源<br>拉去基本安装件<br>devel 同样推荐</p>
+<p>生成挂载文件<br>根目录切硬盘<br>先调时区软链接<br>再产配置文件</p>
+<p>本地化要修改<br>英语最好别删<br>生成讯息改语言<br>变量别忘创建</p>
+<p>root 密码记全<br>勿忘网络相关<br>安装微码引导员<br>系统初步装完</p>
+</blockquote>
+<h3 id="2-2-脚本安装"><a href="#2-2-脚本安装" class="headerlink" title="2.2 脚本安装"></a>2.2 脚本安装</h3><ul>
+<li><a href="https://gitee.com/auroot/Auins#https://gitee.com/link?target=https%3A%2F%2Fwww.bilibili.com%2Fvideo%2FBV18V411x7ee%2F">Auins (ArchLinux User install scripts)</a></li>
+</ul>
+
                 
             </div>
             <hr/>
@@ -2013,15 +2026,15 @@ stat [文件或文件夹]<span aria-hidden="true" class="line-numbers-rows"><spa
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.webp" class="responsive-img" alt="Skill规范">
+                        <img src="/medias/featureimages/7.webp" class="responsive-img" alt="Technique规范">
                         
-                        <span class="card-title">Skill规范</span>
+                        <span class="card-title">Technique规范</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            摘要：technique规范
                         
                     </div>
                     <div class="publish-info">
@@ -2043,8 +2056,8 @@ stat [文件或文件夹]<span aria-hidden="true" class="line-numbers-rows"><spa
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Skill/">
-                        <span class="chip bg-color">Skill</span>
+                    <a href="/tags/technique/">
+                        <span class="chip bg-color">technique</span>
                     </a>
                     
                 </div>
@@ -2062,15 +2075,15 @@ stat [文件或文件夹]<span aria-hidden="true" class="line-numbers-rows"><spa
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.webp" class="responsive-img" alt="windows规范">
+                        <img src="/medias/featureimages/0.webp" class="responsive-img" alt="Windows规范">
                         
-                        <span class="card-title">windows规范</span>
+                        <span class="card-title">Windows规范</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            摘要：windows规范
                         
                     </div>
                     <div class="publish-info">
@@ -2432,7 +2445,7 @@ stat [文件或文件夹]<span aria-hidden="true" class="line-numbers-rows"><spa
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2021</span>
+                <span id="year">2021-2022</span>
             
             <a href="/about" target="_blank">yinglonglll</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
@@ -2440,7 +2453,7 @@ stat [文件或文件夹]<span aria-hidden="true" class="line-numbers-rows"><spa
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">13.4k</span>
+                        class="white-color">74.2k</span>
             
             
             

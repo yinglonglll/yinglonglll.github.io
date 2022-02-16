@@ -4,14 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Skill规范">
-    <meta name="description" content="一、Maven
-简述：提供某功能需要导入的包，免去重复网上查找的繁琐步骤
-
-1. Spring依赖包
-简述：springboot-starter自身携带的依赖包，spring依赖包仅需设置与springboot版本一致即可
-
-&amp;lt;!--">
+    <meta name="keywords" content="technique规范">
+    <meta name="description" content="摘要：technique规范">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -23,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Skill规范 | yinglonglll</title>
+    <title>Technique规范 | yinglonglll</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -617,12 +611,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.webp')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.webp')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Skill规范</h1>
+                    <h1 class="description center-align post-title">Technique规范</h1>
                 </div>
             </div>
         </div>
@@ -746,8 +740,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Skill/">
-                                <span class="chip bg-color">Skill</span>
+                            <a href="/tags/technique/">
+                                <span class="chip bg-color">technique</span>
                             </a>
                         
                     </div>
@@ -778,21 +772,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-12-06
+                    2022-02-15
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.2k
+                    12.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    6 分
+                    55 分
                 </div>
                 
 
@@ -823,7 +817,349 @@
                 <h1 id="一、Maven"><a href="#一、Maven" class="headerlink" title="一、Maven"></a>一、Maven</h1><blockquote>
 <p>简述：提供某功能需要导入的包，免去重复网上查找的繁琐步骤</p>
 </blockquote>
-<h2 id="1-Spring依赖包"><a href="#1-Spring依赖包" class="headerlink" title="1. Spring依赖包"></a>1. Spring依赖包</h2><blockquote>
+<h2 id="1-pom-xml模板"><a href="#1-pom-xml模板" class="headerlink" title="1. pom.xml模板"></a>1. pom.xml模板</h2><h3 id="1-1-xml头文件"><a href="#1-1-xml头文件" class="headerlink" title="1.1 xml头文件"></a>1.1 xml头文件</h3><pre class="line-numbers language-xml" data-language="xml"><code class="language-xml"><span class="token prolog">&lt;?xml version="1.0" encoding="UTF-8" ?></span>
+<span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">mapper</span>
+        <span class="token name">PUBLIC</span> <span class="token string">"-//mybatis.org//DTD Mapper 3.0//EN"</span>
+        <span class="token string">"http://mybatis.org/dtd/mybatis-3-mapper.dtd"</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>mapper</span> <span class="token attr-name">namespace</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>com.kuang.mapper.UserMapper<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>mapper</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="1-2-pom-xml父模板"><a href="#1-2-pom-xml父模板" class="headerlink" title="1.2 pom.xml父模板"></a>1.2 pom.xml父模板</h3><pre class="line-numbers language-xml" data-language="xml"><code class="language-xml"><span class="token prolog">&lt;?xml version="1.0" encoding="UTF-8"?></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>project</span> <span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://maven.apache.org/POM/4.0.0<span class="token punctuation">"</span></span>
+         <span class="token attr-name"><span class="token namespace">xmlns:</span>xsi</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.w3.org/2001/XMLSchema-instance<span class="token punctuation">"</span></span>
+         <span class="token attr-name"><span class="token namespace">xsi:</span>schemaLocation</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token comment">&lt;!--表示是含有 Maven 形式创建的模块，故父模块可spring Initializr 或 Maven 的形式来创建父模块--></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>modelVersion</span><span class="token punctuation">></span></span>4.0.0<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>modelVersion</span><span class="token punctuation">></span></span>
+    <span class="token comment">&lt;!--父模块通过model标签管理子模块--></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>modules</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>module</span><span class="token punctuation">></span></span>eladmin-common<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>module</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>module</span><span class="token punctuation">></span></span>eladmin-logging<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>module</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>module</span><span class="token punctuation">></span></span>eladmin-system<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>module</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>module</span><span class="token punctuation">></span></span>eladmin-tools<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>module</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>modules</span><span class="token punctuation">></span></span>
+    
+    <span class="token comment">&lt;!--父依赖 https://blog.csdn.net/qq_44742816/article/details/101695904--></span>
+    <span class="token comment">&lt;!--空maven项目中无父依赖，但springboot中有，其作用是定义项目的规范，此时为springboot项目--></span>
+    <span class="token comment">&lt;!--由于Properties in parent definition are prohibited，所有父类的version无法在properties中控制，为了准守代码规范--></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>parent</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-boot-starter-parent<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>2.2.10.RELEASE<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>parent</span><span class="token punctuation">></span></span>
+    
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>com.zzj<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>ex_eladmin<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>packaging</span><span class="token punctuation">></span></span>pom<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>packaging</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>1.0-SNAPSHOT<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
+
+    <span class="token comment">&lt;!--版本控制--></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>properties</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>maven.compiler.source</span><span class="token punctuation">></span></span>8<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>maven.compiler.source</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>maven.compiler.target</span><span class="token punctuation">></span></span>8<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>maven.compiler.target</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>project.build.sourceEncoding</span><span class="token punctuation">></span></span>UTF-8<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>project.build.sourceEncoding</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>project.reporting.outputEncoding</span><span class="token punctuation">></span></span>UTF-8<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>project.reporting.outputEncoding</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>java.version</span><span class="token punctuation">></span></span>1.8<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>java.version</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>log4jdbc.version</span><span class="token punctuation">></span></span>1.16<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>log4jdbc.version</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>swagger.version</span><span class="token punctuation">></span></span>2.9.2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>swagger.version</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>fastjson.version</span><span class="token punctuation">></span></span>1.2.70<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>fastjson.version</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>druid.version</span><span class="token punctuation">></span></span>1.1.24<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>druid.version</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>commons-pool2.version</span><span class="token punctuation">></span></span>2.5.0<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>commons-pool2.version</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>mapstruct.version</span><span class="token punctuation">></span></span>1.3.1.Final<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>mapstruct.version</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>hutool.version</span><span class="token punctuation">></span></span>5.3.4<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>hutool.version</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>lombok.version</span><span class="token punctuation">></span></span>1.18.12<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>lombok.version</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>commons-lang3</span><span class="token punctuation">></span></span>3.9<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>commons-lang3</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>springboot.version</span><span class="token punctuation">></span></span>2.2.10.RELEASE<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>springboot.version</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>properties</span><span class="token punctuation">></span></span>
+    <span class="token comment">&lt;!--依赖分为&lt;dependencyManagement>和&lt;dependencies>两部分：
+    1.这样父模块既可以统一管理dependency的版本，避免jar包冲突；
+    2.子模块也可以自由选择，不会冗余加载子模块用不到的jar
+    3.尽可能减少重复书写导入依赖的代码--></span>
+    <span class="token comment">&lt;!--作用：https://blog.csdn.net/vtopqx/article/details/79034835?utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7Edefault-3.no_search_link&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7Edefault-3.no_search_link--></span>
+
+    <span class="token comment">&lt;!--此处管理所有非spring的依赖--></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependencyManagement</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependencies</span><span class="token punctuation">></span></span>
+
+            <span class="token comment">&lt;!--监控sql日志--></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.bgee.log4jdbc-log4j2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>log4jdbc-log4j2-jdbc4.1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>$&#123;log4jdbc.version&#125;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+
+            <span class="token comment">&lt;!-- Swagger UI 相关 --></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>io.springfox<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>springfox-swagger2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>$&#123;swagger.version&#125;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>exclusions</span><span class="token punctuation">></span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>exclusion</span><span class="token punctuation">></span></span>
+                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>io.swagger<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>swagger-annotations<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>exclusion</span><span class="token punctuation">></span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>exclusion</span><span class="token punctuation">></span></span>
+                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>io.swagger<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>swagger-models<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>exclusion</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>exclusions</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>io.springfox<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>springfox-swagger-ui<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>$&#123;swagger.version&#125;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>io.swagger<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>swagger-annotations<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>1.5.21<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>io.swagger<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>swagger-models<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>1.5.21<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+
+            <span class="token comment">&lt;!--Mysql依赖包--></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>mysql<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>mysql-connector-java<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>scope</span><span class="token punctuation">></span></span>runtime<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>scope</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+
+            <span class="token comment">&lt;!-- druid数据源驱动 --></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>com.alibaba<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>druid-spring-boot-starter<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>$&#123;druid.version&#125;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.lionsoul<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>ip2region<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>1.7.2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+
+            <span class="token comment">&lt;!--lombok插件--></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.projectlombok<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>lombok<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>$&#123;lombok.version&#125;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>optional</span><span class="token punctuation">></span></span>true<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>optional</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+
+            <span class="token comment">&lt;!-- excel工具 --></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.apache.poi<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>poi<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>3.17<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.apache.poi<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>poi-ooxml<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>3.17<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>xerces<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>xercesImpl<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>2.12.0<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+
+            <span class="token comment">&lt;!-- fastjson --></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>com.alibaba<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>fastjson<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>$&#123;fastjson.version&#125;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+
+            <span class="token comment">&lt;!--mapStruct依赖--></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.mapstruct<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>mapstruct<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>$&#123;mapstruct.version&#125;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.mapstruct<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>mapstruct-processor<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>$&#123;mapstruct.version&#125;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>scope</span><span class="token punctuation">></span></span>provided<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>scope</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>javax.inject<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>javax.inject<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+
+            <span class="token comment">&lt;!-- Java图形验证码 --></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>com.github.whvcse<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>easy-captcha<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>1.6.2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+
+            <span class="token comment">&lt;!-- 解析客户端操作系统、浏览器信息 --></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>nl.basjes.parse.useragent<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>yauaa<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>5.23<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+
+            <span class="token comment">&lt;!--工具包:一个Java工具包类库,对文件、流、加密解密、转码、正则、线程、XML等JDK方法进行封装,组成各种Util工具类--></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>cn.hutool<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>hutool-all<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>$&#123;hutool.version&#125;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+
+            <span class="token comment">&lt;!--spring boot 集成redis所需common-pool2--></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.apache.commons<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>commons-pool2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>$&#123;commons-pool2.version&#125;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.apache.commons<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>commons-lang3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>$&#123;commons-lang3&#125;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependencies</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependencyManagement</span><span class="token punctuation">></span></span>
+    <span class="token comment">&lt;!--此处管理所有spring的依赖-所有模块通用--></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependencies</span><span class="token punctuation">></span></span>
+        <span class="token comment">&lt;!--Spring boot 核心--></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-boot-starter-data-jpa<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>$&#123;springboot.version&#125;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+
+        <span class="token comment">&lt;!--Spring boot Web容器--></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-boot-starter-web<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>$&#123;springboot.version&#125;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+
+        <span class="token comment">&lt;!--Spring boot 测试--></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-boot-starter-test<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>$&#123;springboot.version&#125;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>scope</span><span class="token punctuation">></span></span>test<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>scope</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+
+        <span class="token comment">&lt;!--Spring boot 安全框架--></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-boot-starter-security<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>$&#123;springboot.version&#125;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+
+        <span class="token comment">&lt;!-- spring boot 缓存 --></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-boot-starter-cache<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>$&#123;springboot.version&#125;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+
+        <span class="token comment">&lt;!--Spring boot Redis--></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-boot-starter-data-redis<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>$&#123;springboot.version&#125;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependencies</span><span class="token punctuation">></span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>build</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>plugins</span><span class="token punctuation">></span></span>
+            <span class="token comment">&lt;!-- 打包时跳过测试，若出现无法加载时请注释掉版本自动导入包，再添加回版本 --></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>plugin</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.apache.maven.plugins<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>maven-surefire-plugin<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>2.22.2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>configuration</span><span class="token punctuation">></span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>skip</span><span class="token punctuation">></span></span>true<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>skip</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>configuration</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>plugin</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>plugins</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>build</span><span class="token punctuation">></span></span>
+
+    <span class="token comment">&lt;!--配置仓库阿里云镜像--></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>repositories</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>repository</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>id</span><span class="token punctuation">></span></span>public<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>id</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>aliyun nexus<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>url</span><span class="token punctuation">></span></span>http://maven.aliyun.com/nexus/content/groups/public/<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>url</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>releases</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>enabled</span><span class="token punctuation">></span></span>true<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>enabled</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>releases</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>repository</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>repositories</span><span class="token punctuation">></span></span>
+
+    <span class="token comment">&lt;!--配置插件仓库阿里云镜像--></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>pluginRepositories</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>pluginRepository</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>id</span><span class="token punctuation">></span></span>public<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>id</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>aliyun nexus<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>url</span><span class="token punctuation">></span></span>http://maven.aliyun.com/nexus/content/groups/public/<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>url</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>releases</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>enabled</span><span class="token punctuation">></span></span>true<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>enabled</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>releases</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>snapshots</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>enabled</span><span class="token punctuation">></span></span>false<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>enabled</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>snapshots</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>pluginRepository</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>pluginRepositories</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>project</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="1-3-pom-xml子模板"><a href="#1-3-pom-xml子模板" class="headerlink" title="1.3 pom.xml子模板"></a>1.3 pom.xml子模板</h3><pre class="line-numbers language-xml" data-language="xml"><code class="language-xml"><span class="token prolog">&lt;?xml version="1.0" encoding="UTF-8"?></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>project</span> <span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://maven.apache.org/POM/4.0.0<span class="token punctuation">"</span></span>
+         <span class="token attr-name"><span class="token namespace">xmlns:</span>xsi</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.w3.org/2001/XMLSchema-instance<span class="token punctuation">"</span></span>
+         <span class="token attr-name"><span class="token namespace">xsi:</span>schemaLocation</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token comment">&lt;!--父模块通过model标签管理子模块，此处注明model标签的版本，两者不可缺--></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>modelVersion</span><span class="token punctuation">></span></span>4.0.0<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>modelVersion</span><span class="token punctuation">></span></span>
+    
+    <span class="token comment">&lt;!--子模块通过parent标签依赖父模块--></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>parent</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>ex_eladmin<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>com.zzj<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>1.0-SNAPSHOT<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>parent</span><span class="token punctuation">></span></span>
+    
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>eladmin-system<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>核心模块<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>properties</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>maven.compiler.source</span><span class="token punctuation">></span></span>8<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>maven.compiler.source</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>maven.compiler.target</span><span class="token punctuation">></span></span>8<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>maven.compiler.target</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>properties</span><span class="token punctuation">></span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependencies</span><span class="token punctuation">></span></span>
+        <span class="token comment">&lt;!--导入各模块下的com.zzj包到system核心模块中--></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>com.zzj<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>eladmin-common<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>1.0-SNAPSHOT<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>com.zzj<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>eladmin-logging<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>1.0-SNAPSHOT<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>com.zzj<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>eladmin-tools<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>1.0-SNAPSHOT<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependencies</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>project</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h2 id="2-Spring依赖包"><a href="#2-Spring依赖包" class="headerlink" title="2. Spring依赖包"></a>2. Spring依赖包</h2><blockquote>
 <p>简述：springboot-starter自身携带的依赖包，spring依赖包仅需设置与springboot版本一致即可</p>
 </blockquote>
 <pre class="line-numbers language-xml" data-language="xml"><code class="language-xml"><span class="token comment">&lt;!--范例：Spring boot 测试--></span>
@@ -966,7 +1302,7 @@ spring-boot-starter-tomcat
 spring-boot-starter-undertow
 引入了Undertow HTTP引擎（用于替换Tomcat)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="2-非Spring依赖包"><a href="#2-非Spring依赖包" class="headerlink" title="2. 非Spring依赖包"></a>2. 非Spring依赖包</h2><blockquote>
+<h2 id="3-非Spring依赖包"><a href="#3-非Spring依赖包" class="headerlink" title="3. 非Spring依赖包"></a>3. 非Spring依赖包</h2><blockquote>
 <p>简述：常用依赖包（注意进行版本控制，避免版本冲突等问题，此处仅为提供常用版本信息）</p>
 </blockquote>
 <pre class="line-numbers language-xml" data-language="xml"><code class="language-xml"><span class="token comment">&lt;!--Mybatis--></span>
@@ -1051,6 +1387,944 @@ spring-boot-starter-undertow
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+
+
+<h1 id="二、Gradle"><a href="#二、Gradle" class="headerlink" title="二、Gradle"></a>二、Gradle</h1><blockquote>
+<p>简述：暂时搁置</p>
+</blockquote>
+<h1 id="三、服务命令"><a href="#三、服务命令" class="headerlink" title="三、服务命令"></a>三、服务命令</h1><blockquote>
+<p>==简述：命令基本不可能记全的，但根据命令的类型，我们在使用时可以大概判断属于什么范围，从而筛选出使用==</p>
+</blockquote>
+<h2 id="1-语言环境"><a href="#1-语言环境" class="headerlink" title="1. 语言环境"></a>1. 语言环境</h2><blockquote>
+<p>简述：windows或linux中指编程语言环境可能存在jdk8、jdk11多个版本问题，其默认的使用配置如下</p>
+</blockquote>
+<h3 id="1-1-版本问题"><a href="#1-1-版本问题" class="headerlink" title="1.1 版本问题"></a>1.1 版本问题</h3><ul>
+<li><p>依据文件夹结构得如下结论</p>
+  <pre class="line-numbers language-none"><code class="language-none">- JDK
+	&#x2F;&#x2F; 此处为全局JDK环境配置变量
+	- jdk8_271
+	&#x2F;&#x2F; 其余JDK版本统一放置JDK&#x2F;*下，不配置环境变量
+	- JDK11_02
+	- JDK14_03<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+</li>
+</ul>
+<h2 id="2-windows环境"><a href="#2-windows环境" class="headerlink" title="2. windows环境"></a>2. windows环境</h2><blockquote>
+<p>简述：windows无配置systemctl、service服务命令</p>
+</blockquote>
+<h3 id="2-1-tomcat"><a href="#2-1-tomcat" class="headerlink" title="2.1 tomcat"></a>2.1 tomcat</h3><blockquote>
+<p>简述：server.xml中有默认三个端口：http端口8080、shutdown端口8006、<a target="_blank" rel="noopener" href="https://blog.csdn.net/xy100xy100xy100/article/details/114262876">ajp端口8009</a></p>
+<details>
+<summary>三端口详述</summary>
+<ol type="1">
+<li>http端口：http通信端口</li>
+<li>shutdown端口：默认监听在127.0.0.1，但连接该端口，发送SHUTDOWN就可以无任何验证把tomcat关闭掉</li>
+<li>ajp端口：具有类似 (缓存)中间件 的 中间http服务器 的http通信端口，但ajp安全性不高</li>      
+</ol>
+</details>
+</blockquote>
+<h4 id="2-1-1-服务启动"><a href="#2-1-1-服务启动" class="headerlink" title="2.1.1 服务启动"></a>2.1.1 服务启动</h4><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">// 切换到tomcat的bin目录下</span>
+cd <span class="token class-name">F</span><span class="token operator">:</span>\<span class="token class-name">Env</span>\<span class="token class-name">Tomcat</span>\tomcat_9<span class="token punctuation">.</span><span class="token number">0.50</span>\bin
+<span class="token comment">// 安装服务到windows中，服务名自定义，可以tomcat9</span>
+service install 服务名
+<span class="token comment">// tomcat启动命令</span>
+net start 服务名
+<span class="token comment">// tomcat停止命令</span>
+net stop 服务名
+
+<span class="token comment">// 若出现Failed installing 'tomcat7' service，则需要先删除tomcat7服务名，再重复上述操作</span>
+sc delete 服务名    
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="2-1-2-命令启动"><a href="#2-1-2-命令启动" class="headerlink" title="2.1.2 命令启动"></a>2.1.2 命令启动</h4><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">// 切换到tomcat安装目录的bin目录下</span>
+cd <span class="token class-name">F</span><span class="token operator">:</span>\<span class="token class-name">Env</span>\<span class="token class-name">Tomcat</span>\tomcat_9<span class="token punctuation">.</span><span class="token number">0.50</span>\bin
+<span class="token comment">// 开启tomcat，运行bat批处理文件：windows下的可执行脚本文件</span>
+startup<span class="token punctuation">.</span>bat
+<span class="token comment">// 关闭tomcat，运行bat批处理文件</span>
+shutdown<span class="token punctuation">.</span>bat<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="2-1-3-命令启动之多开"><a href="#2-1-3-命令启动之多开" class="headerlink" title="2.1.3 命令启动之多开"></a>2.1.3 命令启动之多开<a id="tomcat多开"></a></h4><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">// 前提：tomcat为解压即用的压缩版、JDK环境变量已配置好</span>
+<span class="token comment">// 1. 复制一份原先的tomcat压缩版文件tomcat_9.0.50，更名为tomcat_9.0.50_8081</span>
+<span class="token comment">// 2. 配置 tomcat_9.0.50_8081 的全局环境变量,同原先操作一样，仅命名不同</span>
+CATALINA_HOME_8081、CATALINA_BASE_8081、在path添加<span class="token operator">%</span>CATALINA_HOME_8081<span class="token operator">%</span>\bin
+<span class="token comment">// 3. 修改 tomcat_9.0.50_8081 的 conf 下的server.xml</span>
+其 shutdown 端口须要修改（不能重复） <span class="token operator">&lt;</span><span class="token class-name">Server</span> port<span class="token operator">=</span><span class="token string">"8005"</span> shutdown<span class="token operator">=</span><span class="token string">"SHUTDOWN"</span><span class="token operator">></span>  
+其 http 访问端口须要修改（不能重复）  <span class="token operator">&lt;</span><span class="token class-name">Connector</span> port<span class="token operator">=</span><span class="token string">"8080"</span> protocol<span class="token operator">=</span><span class="token string">"HTTP/1.1"</span>  connectionTimeout<span class="token operator">=</span><span class="token string">"20000"</span>  redirectPort<span class="token operator">=</span><span class="token string">"8443"</span> <span class="token class-name">URIEncoding</span><span class="token operator">=</span><span class="token string">"UTF-              8"</span> maxPostSize<span class="token operator">=</span><span class="token string">"0"</span> <span class="token operator">/</span><span class="token operator">></span>
+其 ajp 访问端口须要修改（不能重复） <span class="token operator">&lt;</span><span class="token class-name">Connector</span> port<span class="token operator">=</span><span class="token string">"8009"</span> protocol<span class="token operator">=</span><span class="token string">"AJP/1.3"</span> redirectPort<span class="token operator">=</span><span class="token string">"8443"</span> <span class="token operator">/</span><span class="token operator">></span>
+<span class="token comment">// 4. 修改 tomcat_9.0.50_8081 的 bin 下的startup.bat和catalina.bat、(shutdown.bat可选)两个文件</span>
+startup<span class="token punctuation">.</span>bat 文件中全部的 CATALINA_HOME 所有替换成 CATALINA_HOME_8081，（内无CATALINA_BASE，故不修改）
+catalina<span class="token punctuation">.</span>bat 文件中 CATALINA_HOME 所有替换成 CATALINA_HOME_8081，CATALINA_BASE 所有替换CATALINA_BASE_8081 
+（shutdown<span class="token punctuation">.</span>bat 文件中全部的 CATALINA_HOME 所有替换成 CATALINA_HOME_8081） 
+<span class="token comment">// 5. 结束，各自运行相应的命令启动，即 tomcat 下的 bin 下的 startup.bat   </span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h3 id="2-2-nginx"><a href="#2-2-nginx" class="headerlink" title="2.2 nginx"></a>2.2 nginx</h3><blockquote>
+<p>简述：server_name可以代理ip、域名、localhost；若实现单机代理多域名的效果，<a target="_blank" rel="noopener" href="https://blog.csdn.net/WU5229485/article/details/84881902?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_baidulandingword~default-0.no_search_link&spm=1001.2101.3001.4242.1">详见链接</a>，<a target="_blank" rel="noopener" href="https://www.cnblogs.com/xlong1900/archive/2012/12/03/nginx_25qp_com.html">不懂再点</a></p>
+</blockquote>
+<h4 id="2-2-1-命令启动"><a href="#2-2-1-命令启动" class="headerlink" title="2.2.1 命令启动"></a>2.2.1 命令启动</h4><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">// 切换到nginx安装目录下</span>
+cd <span class="token class-name">F</span><span class="token operator">:</span>\<span class="token class-name">Env</span>\<span class="token class-name">Ngnix</span>\nginx<span class="token operator">-</span><span class="token number">1.18</span><span class="token number">.0</span>
+<span class="token comment">// 启动nginx</span>
+start nginx 或 nginx<span class="token punctuation">.</span>exe
+<span class="token comment">// 快速停止nginx 或 有序停止nginx(可保存相关信息)</span>
+nginx<span class="token punctuation">.</span>exe <span class="token operator">-</span>s stop 或 nginx<span class="token punctuation">.</span>exe <span class="token operator">-</span>s quit
+<span class="token comment">// 重载nginx：当nginx.conf被修改后，需重新载入nginx</span>
+nginx<span class="token punctuation">.</span>exe <span class="token operator">-</span>s reload 
+<span class="token comment">// 重新打开日志文件</span>
+nginx<span class="token punctuation">.</span>exe <span class="token operator">-</span>s reopen 
+
+<span class="token comment">// 测试配置文件 </span>
+nginx<span class="token punctuation">.</span>exe <span class="token operator">-</span>t <span class="token operator">-</span>c conf<span class="token operator">/</span><span class="token keyword">default</span><span class="token punctuation">.</span>conf 
+输出：
+nginx<span class="token operator">:</span> the configuration file <span class="token class-name">F</span><span class="token operator">:</span>\<span class="token class-name">Env</span>\<span class="token class-name">Ngnix</span>\nginx<span class="token operator">-</span><span class="token number">1.18</span><span class="token number">.0</span><span class="token operator">/</span>conf<span class="token operator">/</span><span class="token keyword">default</span><span class="token punctuation">.</span>conf syntax isok 
+nginx<span class="token operator">:</span> configuration file <span class="token class-name">F</span><span class="token operator">:</span>\<span class="token class-name">Env</span>\<span class="token class-name">Ngnix</span>\nginx<span class="token operator">-</span><span class="token number">1.18</span><span class="token number">.0</span><span class="token operator">/</span>conf<span class="token operator">/</span><span class="token keyword">default</span><span class="token punctuation">.</span>conf test is successful 
+<span class="token comment">// 载入指定配置文件 </span>
+start nginx<span class="token punctuation">.</span>exe <span class="token operator">-</span>c conf<span class="token operator">/</span><span class="token keyword">default</span><span class="token punctuation">.</span>conf<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="2-2-2-命令启动之多开"><a href="#2-2-2-命令启动之多开" class="headerlink" title="2.2.2 命令启动之多开"></a>2.2.2 命令启动之多开<a id="nginx多开"></a></h4><blockquote>
+<p>简述：nginx多开可以分 同域名，不同端口、不同域名，同端口 两种情况</p>
+</blockquote>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">// 1. 在nginx安装目录下conf目录创建 conf-server文件夹，用于存放conf文件</span>
+<span class="token class-name">F</span><span class="token operator">:</span>\<span class="token class-name">Env</span>\<span class="token class-name">Ngnix</span>\nginx<span class="token operator">-</span><span class="token number">1.18</span><span class="token number">.0</span>\conf\server<span class="token operator">-</span>conf
+<span class="token comment">// 2. 往nginx.conf中http&#123;...&#125;导入 conf-server 下的所有conf文件</span>
+http <span class="token punctuation">&#123;</span>
+	# 如下所示
+    include server<span class="token operator">-</span>conf<span class="token comment">/*.conf;
+    ......
+    &#125;
+// 3.重载nginx服务
+nginx -s reload</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li><p>不同域名同端口</p>
+<blockquote>
+<p>简述：新建 server-conf/test.conf 为例，内容如下</p>
+</blockquote>
+  <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">// 效果：访问 webone.com 跳转 D:/me/nginx/nginx-1.15.7/html/web1/index.html</span>
+server <span class="token punctuation">&#123;</span>
+    listen       <span class="token number">80</span><span class="token punctuation">;</span>   #注意这里，要把默认的那个default_server去掉<span class="token punctuation">,</span>因为我们在下面要单独配置域名访问，所以这里不要留default_server，不然会报错。
+    server_name  webone<span class="token punctuation">.</span>com<span class="token punctuation">;</span>  #这里写你想设置的域名，可以写多个，与名之间用空格隔开
+    # root         <span class="token class-name">D</span><span class="token operator">:</span><span class="token operator">/</span>me<span class="token operator">/</span>nginx<span class="token operator">/</span>nginx<span class="token operator">-</span><span class="token number">1.15</span><span class="token number">.7</span><span class="token punctuation">;</span>   #这里是你虚拟机的根目录，写绝对路径，不写默认为nginx<span class="token operator">/</span>
+    # <span class="token class-name">Load</span> configuration files <span class="token keyword">for</span> the <span class="token keyword">default</span> server block<span class="token punctuation">.</span>
+ 
+    location <span class="token operator">/</span> <span class="token punctuation">&#123;</span>
+        root   html<span class="token operator">/</span>web1<span class="token punctuation">;</span>
+        index  index<span class="token punctuation">.</span>php index<span class="token punctuation">.</span>html index<span class="token punctuation">.</span>htm<span class="token punctuation">;</span>  #这里配置默认访问的页面
+		# 解决非域名根目录下刷新报<span class="token number">404</span>的问题
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token operator">-</span>e $request_filename<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            rewrite <span class="token operator">^</span><span class="token punctuation">(</span><span class="token punctuation">.</span>*<span class="token punctuation">)</span>$ <span class="token operator">/</span>index<span class="token punctuation">.</span>html<span class="token operator">?</span>s<span class="token operator">=</span>$<span class="token number">1</span> last<span class="token punctuation">;</span>
+            <span class="token keyword">break</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+    # location <span class="token operator">~</span><span class="token punctuation">(</span><span class="token operator">^</span>\<span class="token operator">/</span>api\<span class="token operator">/</span>biz<span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">.</span>*<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    #         #反向代理api到真实地址
+    #         proxy_pass  http<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span><span class="token number">127.0</span><span class="token number">.0</span><span class="token number">.1</span><span class="token operator">:</span><span class="token number">5000</span><span class="token punctuation">;</span>
+    #         proxy_redirect     off<span class="token punctuation">;</span>
+    #     <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token comment">// 效果：访问 webtwo.com 跳转 D:/me/nginx/nginx-1.15.7/html/web2/index.html </span>
+server <span class="token punctuation">&#123;</span>
+    listen       <span class="token number">80</span><span class="token punctuation">;</span>
+    server_name  webtwo<span class="token punctuation">.</span>com<span class="token punctuation">;</span>
+    root         <span class="token class-name">D</span><span class="token operator">:</span><span class="token operator">/</span>me<span class="token operator">/</span>nginx<span class="token operator">/</span>nginx<span class="token operator">-</span><span class="token number">1.15</span><span class="token number">.7</span><span class="token punctuation">;</span> 
+ 
+    location <span class="token operator">/</span> <span class="token punctuation">&#123;</span>
+        root   html<span class="token operator">/</span>web2<span class="token punctuation">;</span>
+        index  index<span class="token punctuation">.</span>php index<span class="token punctuation">.</span>html index<span class="token punctuation">.</span>htm<span class="token punctuation">;</span> 
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token comment">// 效果：访问 webthree.com 跳转 https://www.kugou.com/</span>
+server <span class="token punctuation">&#123;</span>
+    listen       <span class="token number">80</span><span class="token punctuation">;</span>
+    server_name  webthree<span class="token punctuation">.</span>com<span class="token punctuation">;</span>
+    root         <span class="token class-name">D</span><span class="token operator">:</span><span class="token operator">/</span>me<span class="token operator">/</span>nginx<span class="token operator">/</span>nginx<span class="token operator">-</span><span class="token number">1.15</span><span class="token number">.7</span><span class="token punctuation">;</span>  
+ 
+    location <span class="token operator">/</span> <span class="token punctuation">&#123;</span>
+    	<span class="token comment">// 进行反向代理时，不指定具体的index.html文件，通过proxy_pass反向代理原本访问的文件</span>
+        index  index<span class="token punctuation">.</span>php index<span class="token punctuation">.</span>html index<span class="token punctuation">.</span>htm<span class="token punctuation">;</span>
+        proxy_pass   https<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>www<span class="token punctuation">.</span>kugou<span class="token punctuation">.</span>com<span class="token operator">/</span><span class="token punctuation">;</span>
+        #以下是一些反向代理的配置可删除
+ 
+        #proxy_redirect             off<span class="token punctuation">;</span> 
+ 
+        #后端的<span class="token class-name">Web</span>服务器可以通过<span class="token class-name">X</span><span class="token operator">-</span><span class="token class-name">Forwarded</span><span class="token operator">-</span><span class="token class-name">For</span>获取用户真实IP
+ 
+        #proxy_set_header           <span class="token class-name">Host</span> $host<span class="token punctuation">;</span> 
+        #proxy_set_header           <span class="token class-name">X</span><span class="token operator">-</span><span class="token class-name">Real</span><span class="token operator">-</span>IP $remote_addr<span class="token punctuation">;</span> 
+        #proxy_set_header           <span class="token class-name">X</span><span class="token operator">-</span><span class="token class-name">Forwarded</span><span class="token operator">-</span><span class="token class-name">For</span> $proxy_add_x_forwarded_for<span class="token punctuation">;</span> 
+        #client_max_body_size       <span class="token number">10</span>m<span class="token punctuation">;</span> #允许客户端请求的最大单文件字节数
+        #client_body_buffer_size    <span class="token number">128</span>k<span class="token punctuation">;</span> #缓冲区代理缓冲用户端请求的最大字节数
+        #proxy_connect_timeout      <span class="token number">300</span><span class="token punctuation">;</span> #nginx跟后端服务器连接超时时间<span class="token punctuation">(</span>代理连接超时<span class="token punctuation">)</span>
+        #proxy_send_timeout         <span class="token number">300</span><span class="token punctuation">;</span> #后端服务器数据回传时间<span class="token punctuation">(</span>代理发送超时<span class="token punctuation">)</span>
+        #proxy_read_timeout         <span class="token number">300</span><span class="token punctuation">;</span> #连接成功后，后端服务器响应时间<span class="token punctuation">(</span>代理接收超时<span class="token punctuation">)</span>
+        #proxy_buffer_size          <span class="token number">4</span>k<span class="token punctuation">;</span> #设置代理服务器（nginx）保存用户头信息的缓冲区大小
+        #proxy_buffers              <span class="token number">4</span> <span class="token number">32</span>k<span class="token punctuation">;</span> #proxy_buffers缓冲区，网页平均在<span class="token number">32</span>k以下的话，这样设置
+        #proxy_busy_buffers_size    <span class="token number">64</span>k<span class="token punctuation">;</span> #高负荷下缓冲大小（proxy_buffers<span class="token operator">*</span><span class="token number">2</span>）
+        #proxy_temp_file_write_size <span class="token number">64</span>k<span class="token punctuation">;</span> #设定缓存文件夹大小，大于这个值，将从upstream服务器传 
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token comment">// 应用场景：server_name 都改为 webtwo.com/x 保证外界访问本地服务器因携带x参数不同而选择不同的代理网站</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>同域名不同端口</p>
+  <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">// 应用场景：占用复数个端口实现，即开启多个nginx服务占用端口，一个端口代理一个网站，但十分耗费资源，故不推荐</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+</ul>
+<h3 id="2-3-mysql"><a href="#2-3-mysql" class="headerlink" title="2.3 mysql"></a>2.3 mysql</h3><blockquote>
+<p>简述：虽是解压版,但还需少许配置</p>
+</blockquote>
+<h4 id="2-3-1-mysql解压版配置"><a href="#2-3-1-mysql解压版配置" class="headerlink" title="2.3.1 mysql解压版配置"></a>2.3.1 mysql解压版配置</h4><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">// mysql版本为5.7.33</span>
+<span class="token comment">// 1.解压mysql压缩文件、同时编辑系统变量Path，添加MySQL的bin目录进去(my.ini初始化有用，后续启动服务也方便，若</span>
+<span class="token comment">// 	 不设置全局变量的话则在 mysqld --defaults-file="此处填写绝对路径")</span>
+<span class="token comment">// 2.在安装目录下新建data文件夹(初始化无法自动生成data文件夹)</span>
+<span class="token comment">// 3.在安装目录新建my.ini配置文件</span>
+<span class="token comment">// 注意：basedir和datadir设置时需要注意的是如果使用“\”请使用双“\”来分割目录，如果不使用这种可以使用单“/”</span>
+<span class="token punctuation">[</span><span class="token class-name">Client</span><span class="token punctuation">]</span>  
+#设置<span class="token number">3306</span>端口  
+port <span class="token operator">=</span> <span class="token number">3306</span>  
+  
+<span class="token punctuation">[</span>mysqld<span class="token punctuation">]</span>  
+#设置<span class="token number">3306</span>端口  
+port <span class="token operator">=</span> <span class="token number">3306</span>  
+# 设置mysql的安装目录  
+basedir<span class="token operator">=</span><span class="token class-name">F</span><span class="token operator">:</span>\\<span class="token class-name">App</span>\\<span class="token class-name">Mysql</span>\\mysql_5<span class="token punctuation">.</span><span class="token number">7.33</span>
+# 设置mysql数据库的数据的存放目录  
+datadir<span class="token operator">=</span><span class="token class-name">F</span><span class="token operator">:</span>\\<span class="token class-name">App</span>\\<span class="token class-name">Mysql</span>\\mysql_5<span class="token punctuation">.</span><span class="token number">7.33</span>\\data
+# 允许最大连接数  
+max_connections<span class="token operator">=</span><span class="token number">200</span>  
+# 服务端使用的字符集默认为<span class="token number">8</span>比特编码的latin1字符集  
+character<span class="token operator">-</span>set<span class="token operator">-</span>server<span class="token operator">=</span>utf8  
+# 创建新表时将使用的默认存储引擎  
+<span class="token keyword">default</span><span class="token operator">-</span>storage<span class="token operator">-</span>engine<span class="token operator">=</span><span class="token class-name">INNODB</span>  
+sql_mode<span class="token operator">=</span>NO_ENGINE_SUBSTITUTION<span class="token punctuation">,</span>STRICT_TRANS_TABLES  
+  
+<span class="token punctuation">[</span>mysql<span class="token punctuation">]</span>  
+# 设置mysql客户端默认字符集  
+<span class="token keyword">default</span><span class="token operator">-</span>character<span class="token operator">-</span>set<span class="token operator">=</span>utf8  
+#代码结束
+<span class="token comment">// 4.用管理员身份运行命令提示符cmd(不使用管理员身份可能会权限不足)</span>
+<span class="token comment">// 5.cd到MySQL的bin目录下</span>
+<span class="token comment">// 6.分别有序执行如下命令</span>
+# <span class="token operator">--</span>initialize<span class="token operator">-</span>insecure是默认空密码、<span class="token operator">--</span>initialize是默认随机密码<span class="token punctuation">,</span>会在data目录生成文件
+mysqld <span class="token operator">--</span>defaults<span class="token operator">-</span>file<span class="token operator">=</span>my<span class="token punctuation">.</span>ini <span class="token operator">--</span>initialize<span class="token operator">-</span>insecure
+# 若之前安装过，则先执行 mysqld <span class="token operator">--</span>remove 移除，再重新安装
+mysqld <span class="token operator">--</span>install
+net start <span class="token function">mysql</span><span class="token punctuation">(</span>此处mysql是mysqld安装默认的服务名<span class="token punctuation">)</span>
+<span class="token comment">// 7.登陆数据库会提示输入密码,再回车代表空密码</span>
+mysql <span class="token operator">-</span>u root <span class="token operator">-</span>p
+<span class="token comment">// 8.重置登陆密码，刷新数据库，退出musql，重启mysql</span>
+set password <span class="token keyword">for</span> root<span class="token annotation punctuation">@localhost</span> <span class="token operator">=</span> <span class="token function">password</span><span class="token punctuation">(</span><span class="token string">'你的密码'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+flush privileges<span class="token punctuation">;</span>
+quit
+net start mysql    <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="2-3-2-常用命令"><a href="#2-3-2-常用命令" class="headerlink" title="2.3.2 常用命令"></a>2.3.2 <a target="_blank" rel="noopener" href="https://www.cnblogs.com/janken/p/11516128.html">常用命令</a></h4><blockquote>
+<p>简述：一般Mysql使用图形化工具操作</p>
+</blockquote>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">// 开启mysql服务，即mysqld</span>
+net start mysql 或 mysqld
+<span class="token comment">// 登录mysql</span>
+mysql <span class="token punctuation">[</span><span class="token operator">-</span>h127<span class="token punctuation">.</span><span class="token number">0.0</span><span class="token number">.1</span><span class="token punctuation">]</span> <span class="token punctuation">[</span><span class="token operator">-</span>P3306<span class="token punctuation">]</span> <span class="token operator">-</span>uroot <span class="token operator">-</span>p    <span class="token punctuation">(</span>端口要用大写<span class="token class-name">P</span>，与密码p加以区分）
+<span class="token comment">// 停止mysql服务</span>
+net stop mysql
+<span class="token comment">// 创建数据库：</span>
+CREATE DATABASE `tpcms` DEFAULT CHARACTER SET utf8 <span class="token class-name">COLLATE</span> utf8_general_ci<span class="token punctuation">;</span> 
+<span class="token comment">// 选择数据库：</span>
+use database<span class="token punctuation">;</span>
+<span class="token comment">// 显示表：</span>
+show tables<span class="token punctuation">;</span>
+<span class="token comment">// 显示表结构：</span>
+describe table<span class="token punctuation">;</span>
+<span class="token operator">--</span><span class="token operator">-</span>
+<span class="token comment">// 查看当前登录的用户：</span>
+select <span class="token function">user</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 或 select <span class="token function">current_user</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 查看数据库系统配置的用户列表：</span>
+SELECT <span class="token operator">*</span> FROM mysql<span class="token punctuation">.</span>user<span class="token punctuation">;</span> （其中权限相关的信息也在这个表中，用户超期也在这个表中）
+<span class="token comment">// 创建用户：</span>
+CREATE USER <span class="token string">'test'</span>@<span class="token string">'localhost'</span> IDENTIFIED BY <span class="token string">'123456'</span><span class="token punctuation">;</span>
+<span class="token comment">// root账户修改用户的密码的方式：</span>
+<span class="token comment">// 有的老版本的mysql保存密码的字段为'password',修改密码是需要根据不同的字段名来调整sql是用authentication_string还是用password。</span>
+udpate mysql<span class="token punctuation">.</span>user set authentication_string<span class="token operator">=</span><span class="token function">password</span><span class="token punctuation">(</span><span class="token string">'[你的密码]'</span><span class="token punctuation">)</span> where user<span class="token operator">=</span><span class="token string">'[需要修改的用户名]'</span>；
+                                           
+<span class="token comment">// 为用户授权：</span>
+<span class="token comment">// 模板：grant all privileges on 库名.表名 to '用户名'@'IP地址' identified by '密码' with grant option;</span>
+mysql<span class="token operator">></span> grant all privileges on <span class="token operator">*</span><span class="token punctuation">.</span>* <span class="token keyword">to</span> <span class="token namespace">test</span><span class="token annotation punctuation">@localhost</span> identified by <span class="token string">'test'</span> <span class="token keyword">with</span> <span class="token namespace">grant</span> option<span class="token punctuation">;</span> 
+表示增加一个本地具有所有权限的test用户（超级用户），密码是test。ON子句中的<span class="token operator">*</span><span class="token punctuation">.</span>*意味着<span class="token string">"所有数据库、所有表"</span>。<span class="token keyword">with</span> <span class="token namespace">grant</span> option表示它具有grant权限。 即自身权限大，还可以给其他人授权！
+
+<span class="token comment">// 修改用户信息后刷新用户权限：每次配置修改都需进行刷入磁盘保存</span>
+flush privileges<span class="token punctuation">;</span>
+
+<span class="token comment">// 创建数据库： </span>
+create database <span class="token punctuation">[</span>数据库名称<span class="token punctuation">]</span> <span class="token keyword">default</span> character set utf8 collate utf8_general_ci<span class="token punctuation">;</span>
+
+<span class="token comment">// 查看用户的授权语句：</span>
+show grants <span class="token keyword">for</span> <span class="token punctuation">[</span>用户名<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 移除某个授权：</span>
+revoke <span class="token punctuation">[</span>drop <span class="token operator">|</span> 权限<span class="token punctuation">]</span> on <span class="token punctuation">[</span>数据库名称<span class="token punctuation">]</span><span class="token punctuation">.</span>* from <span class="token punctuation">[</span>用户名称<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 删除某个数据库实例：</span>
+DROP DATABASE <span class="token punctuation">[</span>数据库名称<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 查询一个用户有几个schemas（数据库实例）的访问权限：</span>
+show grants <span class="token keyword">for</span> <span class="token punctuation">[</span>用户名<span class="token punctuation">]</span><span class="token punctuation">;</span>  <span class="token punctuation">(</span>会将赋权给用户访问的数据列出来）
+
+<span class="token comment">// 查看mysql的权限关键字列表：</span>
+show privilege<span class="token punctuation">;</span>
+
+<span class="token comment">// 查看某个schema（数据库实例）有哪些用户可以访问：</span>
+select host<span class="token punctuation">,</span>db<span class="token punctuation">,</span>user from mysql<span class="token punctuation">.</span>db<span class="token punctuation">;</span>
+
+<span class="token comment">// 导入数据库:（如果数据库文件是压缩文件tp.sql.zip类型的，要先解压，然后导入。并且路径中的斜线应该为/，否则\这样就是转义了，应该是\\）</span>
+source d<span class="token operator">:</span><span class="token operator">/</span><span class="token class-name">X</span><span class="token operator">/</span>www<span class="token operator">/</span>tpcms<span class="token operator">/</span>clientcms<span class="token punctuation">.</span>sql<span class="token punctuation">;</span>
+<span class="token comment">// 导出数据库：容易出错的地方：1.在cmd下进行（因为要登出mysql控制台才能导出数据库），然后cd 切换mysql安装目录bin目录下；执行命令：mysqldump -hlocalhsot -uroot -padmin 库名>d:/mysqldata.sql.2.mysqldump...注意这里没分号，因为是在cmd下进行的。</span>
+mysqldump <span class="token operator">-</span>uroot <span class="token operator">-</span>padmin  mysqldata<span class="token operator">></span>d<span class="token operator">:</span><span class="token operator">/</span>mysqldata<span class="token punctuation">.</span>sql<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="2-3-3-远程控制问题"><a href="#2-3-3-远程控制问题" class="headerlink" title="2.3.3 远程控制问题"></a>2.3.3 远程控制问题</h4><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">// windows连接linux的mysql服务出现的可能问题情况</span>
+<span class="token number">1.</span>网络问题：检查网络直接ping你的远程服务器 ping <span class="token number">182.61</span><span class="token number">.22</span><span class="token number">.107</span>，可以ping通说明网络没问题
+<span class="token number">2.</span>防火墙问题：看端口号<span class="token number">3306</span>是不是被防火墙挡住了，telnet <span class="token number">182.61</span><span class="token number">.22</span><span class="token number">.107</span> <span class="token number">3306</span>
+<span class="token number">3.</span>MySQL配置：上述两者没问题，可能是用户的访问权限问题，以root账户为例
+<span class="token number">3.1</span>进入数据库查看用户表
+mysql <span class="token operator">-</span>u root <span class="token operator">-</span>p         <span class="token comment">//登录数据库</span>
+use mysql                  <span class="token comment">//进入mysql数据库</span>
+select <span class="token class-name">Host</span><span class="token punctuation">,</span><span class="token class-name">User</span> from user<span class="token punctuation">;</span>       <span class="token comment">//查看可以访问数据库的ip</span>
+若发现对应用户为 host：localhost ，则说明此用户账号只能本地登录，需修改权限
+update user set host <span class="token operator">=</span> <span class="token string">'%'</span> where user <span class="token operator">=</span> <span class="token string">'root'</span><span class="token punctuation">;</span>      #使root能再任何host访问本地mysql服务
+# update user set host<span class="token operator">=</span><span class="token string">'%'</span> where host<span class="token operator">=</span><span class="token string">'localhost'</span>；  #将所有仅能本地访问的账户改为任何host都能访问
+flush privileges<span class="token punctuation">;</span>        <span class="token comment">//刷新生效</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="2-3-4-mysql多开"><a href="#2-3-4-mysql多开" class="headerlink" title="2.3.4 mysql多开"></a>2.3.4 <a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_36371218/article/details/78787208">mysql多开</a></h4><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">// 1.复制一份mysql解压文件 (由于该分文件已进行过部分配置，故需修改)</span>
+<span class="token comment">// 2.修改其中的my.ini配置文件</span>
+<span class="token punctuation">[</span>client<span class="token punctuation">]</span>
+# 不可重复
+port<span class="token operator">=</span><span class="token number">3306</span>
+<span class="token punctuation">[</span>mysqld<span class="token punctuation">]</span>
+# 不可重复
+port<span class="token operator">=</span><span class="token number">3306</span>
+# 不可重复
+basedir<span class="token operator">=</span><span class="token class-name">F</span><span class="token operator">:</span>\\<span class="token class-name">App</span>\\<span class="token class-name">Mysql</span>\\mysql_5<span class="token punctuation">.</span><span class="token number">7.33</span>
+# 不可重复
+datadir<span class="token operator">=</span><span class="token class-name">F</span><span class="token operator">:</span>\\<span class="token class-name">App</span>\\<span class="token class-name">Mysql</span>\\mysql_5<span class="token punctuation">.</span><span class="token number">7.33</span>\\data
+<span class="token comment">// 方式一：</span>
+<span class="token comment">// 3.切换至 bin目录 下，安装服务或命令启动</span>
+mysqld install 服务名 （此处不能与原先的服务名：mysql 同名；建议mysql_3307）
+<span class="token comment">// 4.注意：</span>
+<span class="token comment">// 修改映射路径：my.ini为启动的配置文件内容，但 mysql_3307 服务在windows中的映射路径仍没有修改，指向原来的路径</span>
+<span class="token number">1.</span>win<span class="token operator">+</span>r进入运行，输入regedit 进入注册表
+<span class="token number">2.</span>找到这个目录下：HKEY_LOCAL_MACHINE<span class="token operator">--</span><span class="token operator">-></span>SYSTEM<span class="token operator">--</span><span class="token operator">-></span><span class="token class-name">CurrentControlSet</span><span class="token operator">--</span><span class="token operator">-></span><span class="token class-name">Services</span> 
+<span class="token number">3.</span>找到刚才创建的<span class="token class-name">MySQL2</span>，将<span class="token class-name">ImagePath</span> 修改成   <span class="token string">"复制份的路径\bin\mysqld"</span> <span class="token operator">--</span>defaults<span class="token operator">-</span>file<span class="token operator">=</span><span class="token string">"复制份的路径\my.ini"</span> mysql_3307
+<span class="token number">4.</span>此时启动的net start mysql_3307 是通过上述的win路径映射，找到复制份的mysql配置文件my<span class="token punctuation">.</span>ini来启动mysql_3307服务，不然原先启动的服务名虽不同，但本质还是同一个<span class="token function">mysql</span><span class="token punctuation">(</span>可能会出问题？<span class="token punctuation">)</span>
+<span class="token comment">// 方式二：(未实践)</span>
+<span class="token comment">// 5.删除data目录中所有文件。以重新初始化，为了能够 mysqld --install 安装新的服务信息到windows上</span>
+<span class="token comment">// 6.切换到复制份的bin目录下，重新初始化，此时windows的映射路径为正确路径，不用在注册表上修改</span>
+mysqld <span class="token operator">--</span>defaults<span class="token operator">-</span>file<span class="token operator">=</span><span class="token string">"复制份的绝对路径\my.ini"</span> <span class="token operator">--</span>initialize<span class="token operator">-</span>insecure
+<span class="token comment">// 7.安装服务或命令启动</span>
+mysqld install 服务名 （此处不能与原先的服务名：mysql 同名；建议mysql_3307）
+<span class="token comment">// 8.启动服务</span>
+net start mysql_3307<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h3 id="2-4-redis"><a href="#2-4-redis" class="headerlink" title="2.4 redis"></a>2.4 redis<a id="redis"></a></h3><blockquote>
+<p>简述：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_38174263/article/details/80009943">5大类型</a>、(3大特殊类型、)事务exce、redis.conf详解、</p>
+</blockquote>
+<h4 id="2-4-1-key操作"><a href="#2-4-1-key操作" class="headerlink" title="2.4.1 key操作"></a>2.4.1 key操作</h4><pre class="line-numbers language-none"><code class="language-none">（1）redis允许模糊查询key　　有3个通配符  *、?、[]
+
+（2）randomkey：返回随机key　　
+
+（3）type key：返回key存储的类型
+
+（4）exists key：判断某个key是否存在
+
+（5）del key：删除key
+
+（6）rename key newkey：改名
+
+（7）renamenx key newkey：如果newkey不存在则修改成功
+
+（8）move key 1：将key移动到1数据库
+
+（9）ttl key：查询key的生命周期（秒）
+
+（10）expire key 整数值：设置key的生命周期以秒为单位
+
+（11）pexpire key 整数值：设置key的生命周期以毫秒为单位
+
+（12）pttl key：查询key 的生命周期（毫秒）
+
+（13）perisist key：把指定key设置为永久有效<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="2-4-1-String操作"><a href="#2-4-1-String操作" class="headerlink" title="2.4.1 String操作"></a>2.4.1 String操作</h4><pre class="line-numbers language-none"><code class="language-none">（1）set key value [ex 秒数] [px 毫秒数] [nx&#x2F;xx]　　
+
+　　　　　　如果ex和px同时写，则以后面的有效期为准
+
+　　　　　　nx：如果key不存在则建立
+
+　　　　　　xx：如果key存在则修改其值
+
+（2）get key：取值
+
+（3）mset key1 value1 key2 value2 一次设置多个值
+
+（4）mget key1 key2 ：一次获取多个值
+
+（5）setrange key offset value：把字符串的offset偏移字节改成value，如果偏移量 &gt; 字符串长度，该字符自动补0x00
+
+（6）append key value ：把value追加到key 的原值上
+
+（7）getrange key start stop：获取字符串中[start, stop]范围的值，对于字符串的下标，左数从0开始，右数从-1开始
+
+　　　　　　　　　　　　　　　　　　注意：当start&gt;length，则返回空字符串
+
+　　　　　　　　　　　　　　　　　　　　　当stop&gt;&#x3D;length，则截取至字符串尾
+
+　　　　　　　　　　　　　　　　　　　　　如果start所处位置在stop右边，则返回空字符串
+
+（8）getset key nrevalue：获取并返回旧值，在设置新值
+
+（9）incr key：自增，返回新值，如果incr一个不是int的value则返回错误，incr一个不存在的key，则设置key为1
+
+（10）incrby key 2：跳2自增
+
+（11）incrbyfloat by 0.7： 自增浮点数　
+
+（12）setbit key offset value：设置offset对应二进制上的值，返回该位上的旧值
+
+　　　　　　　　　　　　　　　　　注意：如果offset过大，则会在中间填充0
+
+　　　　　　　　　　　　　　　　　　　　offset最大到多少？
+
+　　　　　　　　　　　　　　　　　　　　2^32-1，即可推出最大的字符串为512M
+
+（13）bitop operation destkey key1 [key2..]    对key1 key2做opecation并将结果保存在destkey上
+
+　　　　　　　　　　　　　　　　　　　　　　　　　　 opecation可以是AND OR NOT XOR
+
+（14）strlen key：取指定key的value值的长度
+
+（15）setex key time value：设置key对应的值value，并设置有效期为time秒
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="2-4-3-List操作"><a href="#2-4-3-List操作" class="headerlink" title="2.4.3 List操作"></a>2.4.3 List操作</h4><blockquote>
+<p>Redis的list类型其实就是一个每个子元素都是string类型的双向链表，链表的最大长度是2^32。list既可以用做栈，也可以用做队列。list的pop操作还有阻塞版本，主要是为了避免轮询</p>
+</blockquote>
+<pre class="line-numbers language-none"><code class="language-none">（1）lpush key value：把值插入到链表头部
+
+（2）rpush key value：把值插入到链表尾部
+
+（3）lpop key ：返回并删除链表头部元素
+
+（4）rpop key： 返回并删除链表尾部元素
+
+（5）lrange key start stop：返回链表中[start, stop]中的元素
+
+（6）lrem key count value：从链表中删除value值，删除count的绝对值个value后结束
+
+　　　　　　　　　　　　　　　count &gt; 0 从表头删除　　count &lt; 0 从表尾删除　　count&#x3D;0 全部删除
+
+（7）ltrim key start stop：剪切key对应的链接，切[start, stop]一段并把改制重新赋给key
+
+（8）lindex key index：返回index索引上的值
+
+（9）llen key：计算链表的元素个数
+
+（10）linsert key after|before search value：在key 链表中寻找search，并在search值之前|之后插入value
+
+（11）rpoplpush source dest：把source 的末尾拿出，放到dest头部，并返回单元值
+
+　　　　					 应用场景：task + bak 双链表完成安全队列
+									 task链表：口口口口口  bak链表：口口口口口
+                            业务逻辑：rpoplpush task bak
+                                     接收返回值并做业务处理
+                                     如果成功则rpop bak清除任务，如果不成功，下次从bak表取任务
+（12）brpop，blpop key timeout：等待弹出key的尾&#x2F;头元素，timeout为等待超时时间，如果timeout为0则一直等待下去
+
+　　　　　　					应用场景：长轮询ajax，在线聊天时能用到<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="2-4-4-hashes类型及操作"><a href="#2-4-4-hashes类型及操作" class="headerlink" title="2.4.4 hashes类型及操作"></a>2.4.4 hashes类型及操作</h4><blockquote>
+<p>Redis hash 是一个string类型的field和value的映射表，它的添加、删除操作都是O(1)（平均）。hash特别适用于存储对象，将一个对象存储在hash类型中会占用更少的内存，并且可以方便的存取整个对象。</p>
+</blockquote>
+<pre class="line-numbers language-none"><code class="language-none">配置： hash_max_zipmap_entries 64 #配置字段最多64个
+
+　　　 hash_max_zipmap_value 512 #配置value最大为512字节
+（1）hset myhash field value：设置myhash的field为value
+
+（2）hsetnx myhash field value：不存在的情况下设置myhash的field为value
+
+（3）hmset myhash field1 value1 field2 value2：同时设置多个field
+
+（4）hget myhash field：获取指定的hash field
+
+（5）hmget myhash field1 field2：一次获取多个field
+
+（6）hincrby myhash field 5：指定的hash field加上给定的值
+
+（7）hexists myhash field：测试指定的field是否存在
+
+（8）hlen myhash：返回hash的field数量
+
+（9）hdel myhash field：删除指定的field
+
+（10）hkeys myhash：返回hash所有的field
+
+（11）hvals myhash：返回hash所有的value
+
+（12）hgetall myhash：获取某个hash中全部的field及value<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="2-4-5-集合结构操作"><a href="#2-4-5-集合结构操作" class="headerlink" title="2.4.5 集合结构操作"></a>2.4.5 集合结构操作</h4><blockquote>
+<p>特点：无序性、确定性、唯一性</p>
+</blockquote>
+<pre class="line-numbers language-none"><code class="language-none">（1）sadd key value1 value2：往集合里面添加元素
+
+（2）smembers key：获取集合所有的元素
+
+（3）srem key value：删除集合某个元素
+
+（4）spop key：返回并删除集合中1个随机元素（可以坐抽奖，不会重复抽到某人）　　　
+
+（5）srandmember key：随机取一个元素
+
+（6）sismember key value：判断集合是否有某个值
+
+（7）scard key：返回集合元素的个数
+
+（8）smove source dest value：把source的value移动到dest集合中
+
+（9）sinter key1 key2 key3：求key1 key2 key3的交集
+
+（10）sunion key1 key2：求key1 key2 的并集
+
+（11）sdiff key1 key2：求key1 key2的差集
+
+（12）sinterstore res key1 key2：求key1 key2的交集并存在res里　<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="2-4-6-有序集合操作"><a href="#2-4-6-有序集合操作" class="headerlink" title="2.4.6 有序集合操作"></a>2.4.6 有序集合操作</h4><blockquote>
+<p>概念：它是在set的基础上增加了一个顺序属性，这一属性在添加修改元素的时候可以指定，每次指定后，zset会自动按新的值调整顺序。可以理解为有两列的mysql表，一列存储value，一列存储顺序，操作中key理解为zset的名字。</p>
+<p>　　和set一样sorted，sets也是string类型元素的集合，不同的是每个元素都会关联一个double型的score。sorted set的实现是skip list和hash table的混合体。</p>
+<p>　　当元素被添加到集合中时，一个元素到score的映射被添加到hash table中，所以给定一个元素获取score的开销是O(1)。另一个score到元素的映射被添加的skip list，并按照score排序，所以就可以有序地获取集合中的元素。添加、删除操作开销都是O(logN)和skip list的开销一致，redis的skip list 实现是双向链表，这样就可以逆序从尾部去元素。sorted set最经常使用方式应该就是作为索引来使用，我们可以把要排序的字段作为score存储，对象的ID当元素存储。</p>
+</blockquote>
+<pre class="line-numbers language-none"><code class="language-none">（1）zadd key score1 value1：添加元素
+
+（2）zrange key start stop [withscore]：把集合排序后,返回名次[start,stop]的元素  默认是升续排列  withscores 是把score也打印出来
+
+（3）zrank key member：查询member的排名（升序0名开始）
+
+（4）zrangebyscore key min max [withscores] limit offset N：集合（升序）排序后取score在[min, max]内的元素，并跳过offset个，取出N个
+
+（5）zrevrank key member：查询member排名（降序 0名开始）
+
+（6）zremrangebyscore key min max：按照score来删除元素，删除score在[min, max]之间
+
+（7）zrem key value1 value2：删除集合中的元素
+
+（8）zremrangebyrank key start end：按排名删除元素，删除名次在[start, end]之间的
+
+（9）zcard key：返回集合元素的个数
+
+（10）zcount key min max：返回[min, max]区间内元素数量
+
+（11）zinterstore dest numkeys key1[key2..] [WEIGHTS weight1 [weight2...]] [AGGREGATE SUM|MIN|MAX]
+
+　　　　　　求key1，key2的交集，key1，key2的权值分别是weight1，weight2
+
+　　　　　　聚合方法用 sum|min|max
+
+　　　　　　聚合结果 保存子dest集合内
+
+　　　　　　注意：weights,aggregate如何理解？
+
+　　　　　　答：如果有交集，交集元素又有score，score怎么处理？aggregate num-&gt;score相加，min最小score，max最大score，另外可以通过weights设置不同的key的权重，交集时  score*weight<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="2-4-7-Redis事务流程"><a href="#2-4-7-Redis事务流程" class="headerlink" title="2.4.7 Redis事务流程"></a>2.4.7 Redis事务流程</h4><blockquote>
+<p>简述：所以事务中的命令在加入时都没有被执行，直到提交时才会开始执行(Exec)一次性完成。</p>
+</blockquote>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">// 事务正常流程</span>
+<span class="token number">127.0</span><span class="token number">.0</span><span class="token number">.1</span><span class="token operator">:</span><span class="token number">6379</span><span class="token operator">></span> multi # 开启事务
+OK
+<span class="token number">127.0</span><span class="token number">.0</span><span class="token number">.1</span><span class="token operator">:</span><span class="token number">6379</span><span class="token operator">></span> set k1 v1 # 命令入队
+QUEUED
+<span class="token number">127.0</span><span class="token number">.0</span><span class="token number">.1</span><span class="token operator">:</span><span class="token number">6379</span><span class="token operator">></span> set k2 v2 # <span class="token punctuation">.</span><span class="token punctuation">.</span>
+QUEUED
+<span class="token number">127.0</span><span class="token number">.0</span><span class="token number">.1</span><span class="token operator">:</span><span class="token number">6379</span><span class="token operator">></span> get k1
+QUEUED
+<span class="token number">127.0</span><span class="token number">.0</span><span class="token number">.1</span><span class="token operator">:</span><span class="token number">6379</span><span class="token operator">></span> set k3 v3
+QUEUED
+<span class="token number">127.0</span><span class="token number">.0</span><span class="token number">.1</span><span class="token operator">:</span><span class="token number">6379</span><span class="token operator">></span> keys <span class="token operator">*</span>
+QUEUED
+<span class="token number">127.0</span><span class="token number">.0</span><span class="token number">.1</span><span class="token operator">:</span><span class="token number">6379</span><span class="token operator">></span> exec # 事务执行
+<span class="token number">1</span><span class="token punctuation">)</span> <span class="token class-name">OK</span>
+<span class="token number">2</span><span class="token punctuation">)</span> <span class="token class-name">OK</span>
+<span class="token number">3</span><span class="token punctuation">)</span> <span class="token string">"v1"</span>
+<span class="token number">4</span><span class="token punctuation">)</span> <span class="token class-name">OK</span>
+<span class="token number">5</span><span class="token punctuation">)</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token string">"k3"</span>
+   <span class="token number">2</span><span class="token punctuation">)</span> <span class="token string">"k2"</span>
+   <span class="token number">3</span><span class="token punctuation">)</span> <span class="token string">"k1"</span>
+<span class="token comment">// 放弃事务：入队的所有命令无效话，不可执行exec</span>
+<span class="token number">127.0</span><span class="token number">.0</span><span class="token number">.1</span><span class="token operator">:</span><span class="token number">6379</span><span class="token operator">></span> DISCARD # 放弃事务
+<span class="token comment">// 事务错误：</span>
+<span class="token number">1.</span>代码语法错误（编译时异常）所有的命令都不执行，即exce都执行不了
+<span class="token number">2.</span>代码逻辑错误 <span class="token punctuation">(</span>运行时异常<span class="token punctuation">)</span> 逻辑错误的命令会报错但仍会向下执行，其他命令可以正常执行， 所以不保证事务原子性
+    
+<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span>
+<span class="token comment">// 乐观锁：Watch监控</span>
+# 第一个客户端 先别执行exec 因为此时watch后的值还是原来的值
+<span class="token number">127.0</span><span class="token number">.0</span><span class="token number">.1</span><span class="token operator">:</span><span class="token number">6379</span><span class="token operator">></span> set money <span class="token number">100</span>
+OK
+<span class="token number">127.0</span><span class="token number">.0</span><span class="token number">.1</span><span class="token operator">:</span><span class="token number">6379</span><span class="token operator">></span> set out <span class="token number">0</span>
+<span class="token number">127.0</span><span class="token number">.0</span><span class="token number">.1</span><span class="token operator">:</span><span class="token number">6379</span><span class="token operator">></span> watch money # 监视 money
+OK
+<span class="token number">127.0</span><span class="token number">.0</span><span class="token number">.1</span><span class="token operator">:</span><span class="token number">6379</span><span class="token operator">></span> multi
+OK
+<span class="token number">127.0</span><span class="token number">.0</span><span class="token number">.1</span><span class="token operator">:</span><span class="token number">6379</span><span class="token operator">></span> DECRBY money <span class="token number">10</span>
+QUEUED
+<span class="token number">127.0</span><span class="token number">.0</span><span class="token number">.1</span><span class="token operator">:</span><span class="token number">6379</span><span class="token operator">></span> INCRBY out <span class="token number">10</span>
+QUEUED
+# 当第二个客户端执行完后 我再执行exec 就报错了；若第二个客户端不执行，则不会报错
+<span class="token number">127.0</span><span class="token number">.0</span><span class="token number">.1</span><span class="token operator">:</span><span class="token number">6379</span><span class="token operator">></span> exec #执行之前，另外一个线程，修改了我们的值，这个时候，就会导致事务执行失败！
+<span class="token punctuation">(</span>nil<span class="token punctuation">)</span>
+
+#第二个客户端
+<span class="token number">127.0</span><span class="token number">.0</span><span class="token number">.1</span><span class="token operator">:</span><span class="token number">6379</span><span class="token operator">></span> set money <span class="token number">80</span>
+OK<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="2-4-8-服务端操作"><a href="#2-4-8-服务端操作" class="headerlink" title="2.4.8 服务端操作"></a>2.4.8 服务端操作</h4><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">// 服务端命令</span>
+（<span class="token number">0</span>）AUTH：
+		#<span class="token punctuation">(</span>仅限启用时<span class="token punctuation">)</span>简单的密码验证
+（<span class="token number">1</span>）ping：
+    	#测定连接是否存活
+（<span class="token number">2</span>）echo：
+    	#在命令行打印一些内容
+（<span class="token number">3</span>）select：
+    	#选择数据库
+（<span class="token number">4</span>）quit：
+    	#退出连接
+（<span class="token number">5</span>）dbsize：
+    	#返回当前数据库中key的数目
+（<span class="token number">6</span>）info：
+    	#获取服务器的信息和统计
+（<span class="token number">7</span>）monitor：
+    	#实时转储收到的请求
+（<span class="token number">8</span>）config get 配置项：
+    	#获取服务器配置的信息
+（<span class="token number">8</span>）config set 配置项  值：
+    	#设置配置项信息
+（<span class="token number">9</span>）flushdb：
+    	#删除当前选择数据库中所有的key
+（<span class="token number">10</span>）flushall：
+    	#删除所有数据库中的所有的key
+（<span class="token number">11</span>）time：
+    	#显示服务器时间，时间戳（秒），微秒数
+（<span class="token number">12</span>）bgrewriteaof：
+    	#后台保存rdb快照
+（<span class="token number">13</span>）bgsave：
+    	#后台保存rdb快照
+（<span class="token number">14</span>）save：
+    	#保存rdb快照
+（<span class="token number">15</span>）lastsave：
+    	#上次保存时间
+（<span class="token number">16</span>）shutdown <span class="token punctuation">[</span>save<span class="token operator">/</span>nosave<span class="token punctuation">]</span>
+		#注意：如果不小心运行了flushall，立即shutdown nosave，关闭服务器，然后手工编辑aof文件，去掉文件中的	flushall相关行，然后开启服务器，就可以倒回原来是数据。如果flushall之后，系统恰好bgwriteaof了，那么aof就清空了，数据丢失。
+（<span class="token number">17</span>）showlog：
+    	#显示慢查询
+			#问：多慢才叫慢？
+			#答：由slowlog<span class="token operator">-</span>log<span class="token operator">-</span>slower<span class="token operator">-</span>than <span class="token number">10000</span>，来指定（单位为微秒）
+			#问：服务器存储多少条慢查询记录
+			#答：由slowlog<span class="token operator">-</span>max<span class="token operator">-</span>len <span class="token number">128</span>，来做限制
+<span class="token comment">// lastsave</span>
+（<span class="token number">1</span>）slaveof host port：
+        #做host port的从服务器<span class="token punctuation">(</span>数据清空<span class="token punctuation">,</span>复制新主内容<span class="token punctuation">)</span>
+（<span class="token number">2</span>）slaveof no one：
+        #变成主服务器<span class="token punctuation">(</span>原数据不丢失<span class="token punctuation">,</span>一般用于主服失败后<span class="token punctuation">)</span>
+（<span class="token number">3</span>）flushdb： 
+        #清空当前数据库的所有数据
+（<span class="token number">4</span>）flushall： 
+        #清空所有数据库的所有数据<span class="token punctuation">(</span>误用了怎么办<span class="token operator">?</span><span class="token punctuation">)</span>
+（<span class="token number">5</span>）shutdown <span class="token punctuation">[</span>save<span class="token operator">/</span>nosave<span class="token punctuation">]</span>： 
+        #关闭服务器<span class="token punctuation">,</span>保存数据<span class="token punctuation">,</span>修改<span class="token function">AOF</span><span class="token punctuation">(</span>如果设置<span class="token punctuation">)</span>
+（<span class="token number">6</span>）slowlog get： 
+        #获取慢查询日志
+（<span class="token number">7</span>）slowlog len： 
+        #获取慢查询日志条数
+（<span class="token number">8</span>）slowlog reset： 
+        #清空慢查询
+<span class="token comment">// info</span>
+（<span class="token number">1</span>）config get 选项<span class="token punctuation">(</span>支持<span class="token operator">*</span>通配<span class="token punctuation">)</span>
+ 		#
+（<span class="token number">2</span>）config set 选项 值
+ 		#
+（<span class="token number">3</span>）config rewrite 
+        #把值写到配置文件
+（<span class="token number">4</span>）config restart 
+        #更新info命令的信息
+（<span class="token number">5</span>）debug object key 
+		#调试选项<span class="token punctuation">,</span>看一个key的情况
+（<span class="token number">6</span>）debug segfault 
+        #模拟段错误<span class="token punctuation">,</span>让服务器崩溃
+（<span class="token number">7</span>）object key <span class="token punctuation">(</span>refcount<span class="token operator">|</span>encoding<span class="token operator">|</span>idletime<span class="token punctuation">)</span>
+ 		#
+（<span class="token number">8</span>）monitor 
+        #打开控制台<span class="token punctuation">,</span>观察命令<span class="token punctuation">(</span>调试用<span class="token punctuation">)</span>，影响redis性能
+（<span class="token number">9</span>）client list 
+        #列出所有连接
+（<span class="token number">10</span>）client kill 
+        #杀死某个连接 CLIENT KILL <span class="token number">127.0</span><span class="token number">.0</span><span class="token number">.1</span><span class="token operator">:</span><span class="token number">43501</span>
+（<span class="token number">11</span>）client getname 
+        #获取连接的名称 默认nil
+（<span class="token number">12</span>）client setname <span class="token string">"名称"</span> 
+        #设置连接名称<span class="token punctuation">,</span>便于调试
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="2-4-9-Redis-conf操作"><a href="#2-4-9-Redis-conf操作" class="headerlink" title="2.4.9 Redis.conf操作"></a>2.4.9 <a target="_blank" rel="noopener" href="https://blog.csdn.net/CHYabc123456hh/article/details/104525974/?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_baidulandingword~default-1.highlightwordscore&spm=1001.2101.3001.4242.2">Redis.conf操作</a></h4><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">// 基本配置</span>
+（<span class="token number">1</span>）daemonize yes 
+		#是否以后台进程启动
+（<span class="token number">2</span>）pidfile <span class="token string">'E:/xxx/redis/redis_pid/redis.pid'</span>
+		#当<span class="token class-name">Redis</span>以守护进程方式运行时，<span class="token class-name">Redis</span>默认会把pid写入redis<span class="token punctuation">.</span>pid文件，可以通过pidfile指定
+（<span class="token number">3</span>）port <span class="token number">6379</span>
+    	#端口
+（<span class="token number">4</span>）databases <span class="token number">16</span>  
+        #设置数据库的数量，默认数据库为<span class="token number">0</span>，可以使用SELECT <span class="token generics"><span class="token punctuation">&lt;</span>dbid<span class="token punctuation">></span></span>命令在连接上指定数据库id
+（<span class="token number">5</span>）save <span class="token number">900</span> <span class="token number">1</span> 
+        #刷新快照到硬盘中，必须满足两者要求才会触发，即<span class="token number">900</span>秒之后至少<span class="token number">1</span>个关键字发生变化
+（<span class="token number">6</span>）save <span class="token number">300</span> <span class="token number">10</span>  
+        #必须是<span class="token number">300</span>秒之后至少<span class="token number">10</span>个关键字发生变化。
+（<span class="token number">7</span>）save <span class="token number">60</span> <span class="token number">10000</span>  
+        #必须是<span class="token number">60</span>秒之后至少<span class="token number">10000</span>个关键字发生变化
+（<span class="token number">8</span>）stop<span class="token operator">-</span>writes<span class="token operator">-</span>on<span class="token operator">-</span>bgsave<span class="token operator">-</span>error yes 
+        #后台存储错误停止写
+（<span class="token number">9</span>）rdbcompression yes 
+        #使用LZF压缩rdb文件，使数据库文件变小
+（<span class="token number">10</span>）rdbchecksum yes 
+        #存储和加载rdb文件时校验
+（<span class="token number">11</span>）dbfilename dump<span class="token punctuation">.</span>rdb 
+        #指定本地数据库文件名，默认值为dump<span class="token punctuation">.</span>rdb
+（<span class="token number">12</span>）dir <span class="token punctuation">.</span>/ 
+        #设置工作目录，rdb文件会写入该目录，即指定本地数据库存放目录
+（<span class="token number">13</span>）bind <span class="token number">127.0</span><span class="token number">.0</span><span class="token number">.1</span> 
+        # 指定 redis 只接收来自于该IP地址的请求，如果注释掉，那么将处理所有请求
+		# 多个ip地址通过 单空格 分割；也可以写多次bind关系表示绑定多ip地址
+（<span class="token number">14</span>）<span class="token keyword">protected</span><span class="token operator">-</span>mode yes 
+        #是否开启保护模式，默认开启。要是配置里没有指定bind和密码。开启该参数后，redis只会本地进行访问拒绝外部访		 #问。要是开启了密码和bind，可以开启。否则最好关闭，设置为no
+（<span class="token number">15</span>）timeout <span class="token number">333</span> 
+        #此参数为设置客户端空闲超过timeout，服务端会断开连接，为<span class="token number">0</span>则服务端不会主动断开连接，不能小于<span class="token number">0</span>
+
+<span class="token comment">// 主从配置</span>
+（<span class="token number">1</span>）slaveof <span class="token generics"><span class="token punctuation">&lt;</span>masterip<span class="token punctuation">></span></span> <span class="token generics"><span class="token punctuation">&lt;</span>masterport<span class="token punctuation">></span></span> 
+        #设置当本机为slav服务时，设置master服务的IP地址及端口，在<span class="token class-name">Redis</span>启动时，它会自动从master进行数据同步
+（<span class="token number">2</span>）masterauth <span class="token operator">&lt;</span>master<span class="token operator">-</span>password<span class="token operator">></span> 
+        #当master服务设置了密码保护时，slav服务连接master的密码
+（<span class="token number">3</span>）slave<span class="token operator">-</span>serve<span class="token operator">-</span>stale<span class="token operator">-</span>data yes 
+        # 当主从断开或正在复制中<span class="token punctuation">,</span>从服务器是否应答
+（<span class="token number">4</span>）slave<span class="token operator">-</span>read<span class="token operator">-</span>only yes 
+        #从服务器只读
+（<span class="token number">5</span>）repl<span class="token operator">-</span>ping<span class="token operator">-</span>slave<span class="token operator">-</span>period <span class="token number">10</span> 
+        #从ping主的时间间隔<span class="token punctuation">,</span>秒为单位
+（<span class="token number">6</span>）repl<span class="token operator">-</span>timeout <span class="token number">60</span> 
+        #主从超时时间<span class="token punctuation">(</span>超时认为断线了<span class="token punctuation">)</span><span class="token punctuation">,</span>要比period大
+（<span class="token number">7</span>）slave<span class="token operator">-</span>priority <span class="token number">100</span> 
+        #如果master不能再正常工作，那么会在多个slave中，选择优先值最小的一个slave提升为master，优先值为<span class="token number">0</span>表示不能提升为master。
+（<span class="token number">8</span>）repl<span class="token operator">-</span>disable<span class="token operator">-</span>tcp<span class="token operator">-</span>nodelay no 
+        #主端是否合并数据<span class="token punctuation">,</span>大块发送给slave
+（<span class="token number">9</span>）slave<span class="token operator">-</span>priority <span class="token number">100</span> 
+        #从服务器的优先级<span class="token punctuation">,</span>当主服挂了<span class="token punctuation">,</span>会自动挑slave priority最小的为主服
+<span class="token comment">// 安全</span>
+（<span class="token number">1</span>）requirepass foobared 
+        # 设置<span class="token class-name">Redis</span>连接密码，若配置连接密码，客户端在连接<span class="token class-name">Redis</span>时需要通过AUTH <span class="token generics"><span class="token punctuation">&lt;</span>password<span class="token punctuation">></span></span>命令提供密码，默认关闭
+（<span class="token number">2</span>）rename<span class="token operator">-</span>command CONFIG b840fc02d524045429941cc15f59e41cb7be6c52 
+        #如果公共环境<span class="token punctuation">,</span>可以重命名部分敏感命令 如config
+<span class="token comment">// 限制</span>
+（<span class="token number">1</span>）maxclients <span class="token number">10000</span> 
+        #设置同一时间最大客户端连接数，默认无限制，设置为<span class="token number">0</span>则为不限制
+（<span class="token number">2</span>）maxmemory <span class="token number">300</span>m 
+        #指定<span class="token class-name">Redis</span>最大内存限制，<span class="token class-name">Redis</span>在启动时会把数据加载到内存中，达到最大内存后，<span class="token class-name">Redis</span>会先尝试清除已到期或即将到期的<span class="token class-name">Key</span>，当此方法处理 后，仍然到达最大内存设置，将无法再进行写入操作，但仍然可以进行读取操作。<span class="token class-name">Redis</span>新的vm机制，会把<span class="token class-name">Key</span>存放内存，<span class="token class-name">Value</span>会存放在swap区
+（<span class="token number">3</span>）maxmemory<span class="token operator">-</span>policy <span class="token keyword">volatile</span><span class="token operator">-</span>lru 
+        #内存到极限后的处理
+                     <span class="token keyword">volatile</span><span class="token operator">-</span>lru <span class="token operator">-></span> LRU算法删除过期key
+                     allkeys<span class="token operator">-</span>lru <span class="token operator">-></span> LRU算法删除<span class="token function">key</span><span class="token punctuation">(</span>不区分过不过期<span class="token punctuation">)</span>
+                     <span class="token keyword">volatile</span><span class="token operator">-</span>random <span class="token operator">-></span> 随机删除过期key
+                     allkeys<span class="token operator">-</span>random <span class="token operator">-></span> 随机删除<span class="token function">key</span><span class="token punctuation">(</span>不区分过不过期<span class="token punctuation">)</span>
+                     <span class="token keyword">volatile</span><span class="token operator">-</span>ttl <span class="token operator">-></span> 删除快过期的key
+                     noeviction <span class="token operator">-></span> 不删除<span class="token punctuation">,</span>返回错误信息
+<span class="token comment">// 日志模式</span>
+（<span class="token number">1</span>）loglevel notice
+		#指定日志记录级别，<span class="token class-name">Redis</span>总共支持四个级别：debug、verbose、notice、warning，默认为verbose
+（<span class="token number">2</span>）logfile stdout
+		#日志记录方式，默认为标准输出，如果配置<span class="token class-name">Redis</span>为守护进程方式运行，而这里又配置为日志记录方式为标准输出，则日志将会发送给<span class="token operator">/</span>dev<span class="token operator">/</span><span class="token keyword">null</span><span class="token punctuation">(</span>但windows是无的，故windows需手动配置logfile的输出路径<span class="token punctuation">)</span>
+（<span class="token number">3</span>）logfile <span class="token string">""</span>
+        #日志输入的位置，建议使用绝对路径
+（<span class="token number">4</span>）appendonly no 
+        #指定是否在每次更新操作后进行日志记录，<span class="token class-name">Redis</span>在默认情况下是异步的把数据写入磁盘，如果不开启，可能会在断电时导致一段时间内的数据丢失。因为 redis本身同步数据文件是按上面save条件来同步的，所以有的数据会在一段时间内只存在于内存中。默认为no
+（<span class="token number">5</span>）appendfilename <span class="token string">'appendonly.aof'</span>
+        #指定更新日志文件名，默认为appendonly<span class="token punctuation">.</span>aof
+（<span class="token number">6</span>）appendfsync no 
+        # 系统缓冲<span class="token punctuation">,</span>统一写<span class="token punctuation">,</span>速度快
+    appendfsync always 
+        # 系统不缓冲<span class="token punctuation">,</span>直接写<span class="token punctuation">,</span>慢<span class="token punctuation">,</span>丢失数据少，安全
+    appendfsync everysec 
+        #折衷<span class="token punctuation">,</span>每秒写<span class="token number">1</span>次
+（<span class="token number">7</span>）no<span class="token operator">-</span>appendfsync<span class="token operator">-</span>on<span class="token operator">-</span>rewrite no 
+        #为yes<span class="token punctuation">,</span>则其他线程的数据放内存里<span class="token punctuation">,</span>合并写入<span class="token punctuation">(</span>速度快<span class="token punctuation">,</span>容易丢失的多<span class="token punctuation">)</span>
+（<span class="token number">8</span>）auto<span class="token operator">-</span>AOF<span class="token operator">-</span>rewrite<span class="token operator">-</span>percentage <span class="token number">100</span> 
+        #当前aof文件是上次重写是大<span class="token class-name">N</span><span class="token operator">%</span>时重写
+（<span class="token number">9</span>）auto<span class="token operator">-</span>AOF<span class="token operator">-</span>rewrite<span class="token operator">-</span>min<span class="token operator">-</span>size <span class="token number">64</span>mb 
+        #aof重写至少要达到的大小
+<span class="token comment">// 慢查询</span>
+（<span class="token number">1</span>）slowlog<span class="token operator">-</span>log<span class="token operator">-</span>slower<span class="token operator">-</span>than <span class="token number">10000</span> 
+        #记录响应时间大于<span class="token number">10000</span>微秒的慢查询
+（<span class="token number">2</span>）slowlog<span class="token operator">-</span>max<span class="token operator">-</span>len <span class="token number">128</span> 
+        # 最多记录<span class="token number">128</span>条<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="2-4-10-redis多开"><a href="#2-4-10-redis多开" class="headerlink" title="2.4.10 redis多开"></a>2.4.10 redis多开</h4><blockquote>
+<p>注意：windows的redis.conf无pid文件，此处是全部redis的配置信息</p>
+</blockquote>
+<ul>
+<li><p>Q：win中的redis压缩文件中redis.windows.conf和redis.windows-service.conf文件的区别？</p>
+<p>  A：两者内容及作用一样。Windows的Redis启动服务默认加载的配置文件是redis.windows-service.conf，若修改一般对 redis.windows.conf 修改，手动开启redis服务，更多配置<a target="_blank" rel="noopener" href="https://blog.csdn.net/summer_style/article/details/106534996">详见链接</a></p>
+</li>
+</ul>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">// 1.复制redis.windows.conf更为redis.windows_6380.conf，修改如下</span>
+port <span class="token number">6380</span>
+logfile <span class="token operator">:</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>/redis_6380<span class="token punctuation">.</span>log
+dbfilename <span class="token operator">:</span> dbfilenamedump_6380<span class="token punctuation">.</span>rdb
+<span class="token comment">// 2.通过指定配置文件 redis.windows_6380.conf 开启端口为6380的redis服务</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>/redis<span class="token operator">-</span>server<span class="token punctuation">.</span>exe <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>/redis<span class="token punctuation">.</span>windows_6380<span class="token punctuation">.</span>conf 
+<span class="token comment">// 3.客户端指定连接redis服务：</span>
+<span class="token comment">// redis-cli.exe –h IP地址 –p 端口 -a 密码	//默认IP本机 端口6379 密码在配置文件中配置</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>/redis<span class="token operator">-</span>cli<span class="token punctuation">.</span>exe <span class="token operator">-</span>p <span class="token number">6380</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h2 id="3-linux环境"><a href="#3-linux环境" class="headerlink" title="3. linux环境"></a>3. linux环境</h2><blockquote>
+<p>简述：linux有配置systemctl、service服务命令，但此处不涉及两种服务命令</p>
+</blockquote>
+<h3 id="3-1-tomcat"><a href="#3-1-tomcat" class="headerlink" title="3.1 tomcat"></a>3.1 tomcat</h3><h4 id="3-1-1-命令启动"><a href="#3-1-1-命令启动" class="headerlink" title="3.1.1 命令启动"></a>3.1.1 命令启动</h4><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">// 切换到当前tomcat的bin目录</span>
+cd <span class="token operator">/</span>usr<span class="token operator">/</span>local<span class="token operator">/</span>tomcat<span class="token operator">-</span><span class="token number">9.0</span><span class="token number">.55</span><span class="token operator">/</span>bin
+<span class="token comment">// 常看当前有无tomcat进程</span>
+ps <span class="token operator">-</span>ef <span class="token operator">|</span> grep tomcat
+<span class="token comment">// 有则先停止全部tomcat进程，运行sh批处理文件批处理文件是无格式的文本文件，它包含一条或多条(cmd)命令</span>
+<span class="token punctuation">.</span>/shutdown<span class="token punctuation">.</span>sh 或 kill <span class="token operator">-</span><span class="token number">9</span> tomcat的进程pid
+
+<span class="token comment">// 运行tomcat(前两者源码是执行 catalina.sh start)</span>
+<span class="token punctuation">.</span>/startup<span class="token punctuation">.</span>sh 或 sh startup<span class="token punctuation">.</span>sh 或 catalina<span class="token punctuation">.</span>sh start
+<span class="token comment">// 停止tomcat</span>
+<span class="token punctuation">.</span>/shutdown<span class="token punctuation">.</span>sh 或 kill <span class="token operator">-</span><span class="token number">9</span> tomcat的进程pid
+<span class="token comment">// 查看tomcat是否启动,端口号常为8080</span>
+netstat <span class="token operator">-</span>anp<span class="token operator">|</span>grep 端口号
+
+<span class="token comment">// 切换到当前tomcat的logs目录</span>
+cd <span class="token operator">/</span>usr<span class="token operator">/</span>local<span class="token operator">/</span>tomcat<span class="token operator">-</span><span class="token number">9.0</span><span class="token number">.55</span><span class="token operator">/</span>logs
+<span class="token comment">// tomcat查看实时运行日志</span>
+tail <span class="token operator">-</span>f catalina<span class="token punctuation">.</span>out
+<span class="token comment">// 退出tail命令</span>
+<span class="token class-name">Ctrl</span><span class="token operator">+</span>c     
+<span class="token comment">// 清空tomcat日志,在退出tail命令为前提，即不处于查看日志的状态    </span>
+clear
+<span class="token comment">// 若无启动sh文件的权限</span>
+chmod u<span class="token operator">+</span>x <span class="token operator">*</span><span class="token punctuation">.</span>sh
+<span class="token comment">// 进入tomcat bin目录启动tomcat时提示–权限不够，则权限全开777</span>
+sudo chmod <span class="token operator">-</span><span class="token class-name">R</span> <span class="token number">777</span> <span class="token operator">/</span>usr<span class="token operator">/</span>tomcat<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="3-1-2-命令启动之多开"><a href="#3-1-2-命令启动之多开" class="headerlink" title="3.1.2 命令启动之多开"></a>3.1.2 <a href="#tomcat%E5%A4%9A%E5%BC%80">命令启动之多开</a></h4><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">// 参照windows的多开</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="3-2-nginx"><a href="#3-2-nginx" class="headerlink" title="3.2  nginx"></a>3.2  nginx</h3><h4 id="3-2-1-命令启动"><a href="#3-2-1-命令启动" class="headerlink" title="3.2.1 命令启动"></a>3.2.1 命令启动</h4><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">// 切换到nginx的安装目录为/usr/local/nginx/</span>
+<span class="token comment">// 启动nginx</span>
+<span class="token punctuation">.</span>/nginx
+<span class="token comment">// 快速停止nginx 或 有序停止nginx</span>
+<span class="token punctuation">.</span>/nginx <span class="token operator">-</span>s stop 或 <span class="token punctuation">.</span>/nginx  <span class="token operator">-</span>s quit
+<span class="token comment">// 重载nginx</span>
+<span class="token punctuation">.</span>/nginx <span class="token operator">-</span>s reload
+
+<span class="token comment">// 测试指定配置文件</span>
+ <span class="token operator">/</span>usr<span class="token operator">/</span>nginx<span class="token operator">/</span>sbin<span class="token operator">/</span>nginx <span class="token operator">-</span>t <span class="token operator">/</span>usr<span class="token operator">/</span>local<span class="token operator">/</span>nginx<span class="token operator">/</span>conf<span class="token operator">/</span>nginx<span class="token punctuation">.</span>conf
+<span class="token comment">// 指定配置文件nginx.conf启动nginx，故可根据nginx.conf多开nginx服务</span>
+<span class="token operator">/</span>usr<span class="token operator">/</span>local<span class="token operator">/</span>nginx<span class="token operator">/</span>sbin<span class="token operator">/</span>nginx <span class="token operator">-</span>c <span class="token operator">/</span>usr<span class="token operator">/</span>local<span class="token operator">/</span>nginx<span class="token operator">/</span>conf<span class="token operator">/</span>nginx<span class="token punctuation">.</span>conf 
+
+<span class="token comment">// 向主进程 master发送信号停止</span>
+ps <span class="token operator">-</span>ef <span class="token operator">|</span> grep nginx  查看带master进程ID
+　kill <span class="token operator">-</span>QUIT ID   从容停止
+　kill <span class="token operator">-</span>TERM ID   快速停止
+　pkill <span class="token operator">-</span><span class="token number">9</span> ID     强制停止<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="3-2-2-命令启动之多开"><a href="#3-2-2-命令启动之多开" class="headerlink" title="3.2.2 命令启动之多开"></a>3.2.2 <a href="#nginx%E5%A4%9A%E5%BC%80">命令启动之多开</a></h4><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">// 参照windows的多开</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="3-3-mysql"><a href="#3-3-mysql" class="headerlink" title="3.3 mysql"></a>3.3 mysql</h3><blockquote>
+<p>简述：</p>
+</blockquote>
+<h4 id="3-3-1-mysql解压版配置"><a href="#3-3-1-mysql解压版配置" class="headerlink" title="3.3.1 mysql解压版配置"></a>3.3.1 <a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_37598011/article/details/93489404">mysql解压版配置</a></h4><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">// 1.解压压缩包到指定目录 /usr/local </span>
+tar <span class="token operator">-</span>zxvf mysql<span class="token operator">-</span><span class="token number">5.7</span><span class="token number">.33</span><span class="token operator">-</span>linux<span class="token operator">-</span>glibc2<span class="token punctuation">.</span><span class="token number">12</span><span class="token operator">-</span>x86_64<span class="token punctuation">.</span>tar <span class="token operator">-</span><span class="token class-name">C</span> <span class="token operator">/</span>usr<span class="token operator">/</span>local<span class="token operator">/</span>mysql_5<span class="token punctuation">.</span><span class="token number">7.33</span>
+<span class="token comment">// 2.创建mysql用户组和用户并修改权限</span>
+groupadd mysql
+useradd <span class="token operator">-</span>r <span class="token operator">-</span>g mysql mysql
+<span class="token comment">// 3.创建数据目录并赋予权限</span>
+mkdir <span class="token operator">-</span>p  <span class="token operator">/</span>data<span class="token operator">/</span>mysql              #创建目录
+chown mysql<span class="token operator">:</span>mysql <span class="token operator">-</span><span class="token class-name">R</span> <span class="token operator">/</span>data<span class="token operator">/</span>mysql   #赋予权限
+<span class="token comment">// 4.配置my.cnf</span>
+vim <span class="token operator">/</span>etc<span class="token operator">/</span>my<span class="token punctuation">.</span>cnf
+<span class="token punctuation">[</span>mysqld<span class="token punctuation">]</span>
+bind<span class="token operator">-</span>address<span class="token operator">=</span><span class="token number">0.0</span><span class="token number">.0</span><span class="token number">.0</span>
+port<span class="token operator">=</span><span class="token number">3306</span>
+user<span class="token operator">=</span>mysql
+basedir<span class="token operator">=</span><span class="token operator">/</span>usr<span class="token operator">/</span>local<span class="token operator">/</span>mysql_5<span class="token punctuation">.</span><span class="token number">7.33</span>
+datadir<span class="token operator">=</span><span class="token operator">/</span>data<span class="token operator">/</span>mysql
+socket<span class="token operator">=</span><span class="token operator">/</span>tmp<span class="token operator">/</span>mysql<span class="token punctuation">.</span>sock
+log<span class="token operator">-</span>error<span class="token operator">=</span><span class="token operator">/</span>data<span class="token operator">/</span>mysql<span class="token operator">/</span>mysql<span class="token punctuation">.</span>err
+pid<span class="token operator">-</span>file<span class="token operator">=</span><span class="token operator">/</span>data<span class="token operator">/</span>mysql<span class="token operator">/</span>mysql<span class="token punctuation">.</span>pid
+#character config
+character_set_server<span class="token operator">=</span>utf8mb4
+symbolic<span class="token operator">-</span>links<span class="token operator">=</span><span class="token number">0</span>
+explicit_defaults_for_timestamp<span class="token operator">=</span><span class="token boolean">true</span>
+<span class="token comment">// 5.进入mysql的bin目录</span>
+cd <span class="token operator">/</span>usr<span class="token operator">/</span>local<span class="token operator">/</span>mysql<span class="token operator">/</span>bin<span class="token operator">/</span>
+<span class="token comment">// 6.初始化mysqld的默认启动方式,并生成随机密码</span>
+<span class="token punctuation">.</span>/mysqld <span class="token operator">--</span>defaults<span class="token operator">-</span>file<span class="token operator">=</span><span class="token operator">/</span>etc<span class="token operator">/</span>my<span class="token punctuation">.</span>cnf <span class="token operator">--</span>basedir<span class="token operator">=</span><span class="token operator">/</span>usr<span class="token operator">/</span>local<span class="token operator">/</span>mysql<span class="token operator">/</span> <span class="token operator">--</span>datadir<span class="token operator">=</span><span class="token operator">/</span>data<span class="token operator">/</span>mysql<span class="token operator">/</span> <span class="token operator">--</span>user<span class="token operator">=</span>mysql <span class="token operator">--</span>initialize
+<span class="token comment">// 7.查看密码（关键字搜root，其附近）</span>
+cat <span class="token operator">/</span>data<span class="token operator">/</span>mysql<span class="token operator">/</span>mysql<span class="token punctuation">.</span>err
+<span class="token comment">// 8.设置mysql到linux的service服务命令,并通过service服务命令启动mysql</span>
+cp <span class="token operator">/</span>usr<span class="token operator">/</span>local<span class="token operator">/</span>mysql<span class="token operator">/</span>support<span class="token operator">-</span>files<span class="token operator">/</span>mysql<span class="token punctuation">.</span>server <span class="token operator">/</span>etc<span class="token operator">/</span>init<span class="token punctuation">.</span>d<span class="token operator">/</span>mysql
+service mysql start 
+ps <span class="token operator">-</span>ef<span class="token operator">|</span>grep mysql
+<span class="token comment">// 9.连接mysql服务</span>
+<span class="token punctuation">.</span>/mysql <span class="token operator">-</span>u root <span class="token operator">-</span>p   #bin目录下
+<span class="token comment">// 10.更改mysql的root账户密码</span>
+<span class="token class-name">SET</span> PASSWORD <span class="token operator">=</span> <span class="token function">PASSWORD</span><span class="token punctuation">(</span><span class="token string">'123456'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ALTER USER <span class="token string">'root'</span>@<span class="token string">'localhost'</span> PASSWORD <span class="token class-name">EXPIRE</span> NEVER<span class="token punctuation">;</span>
+<span class="token class-name">FLUSH</span> PRIVILEGES<span class="token punctuation">;</span>
+<span class="token comment">// 11.设置可以访问的ip：使root账户可以在远程登录连接到本地mysql服务</span>
+use mysql                                            #访问mysql库
+update user set host <span class="token operator">=</span> <span class="token string">'%'</span> where user <span class="token operator">=</span> <span class="token string">'root'</span><span class="token punctuation">;</span>      #使root能再任何host访问
+<span class="token class-name">FLUSH</span> PRIVILEGES<span class="token punctuation">;</span>                                    #刷新
+<span class="token comment">// 12.使 mysql 可执行命令为全局变量（/usr/bin 目录下可全局访问）</span>
+ln <span class="token operator">-</span>s  <span class="token operator">/</span>usr<span class="token operator">/</span>local<span class="token operator">/</span>mysql<span class="token operator">/</span>bin<span class="token operator">/</span>mysql    <span class="token operator">/</span>usr<span class="token operator">/</span>bin<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="3-3-2-常用命令"><a href="#3-3-2-常用命令" class="headerlink" title="3.3.2 常用命令"></a>3.3.2 常用命令</h4><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">// 若想不易mysqld默认的启动配置文件方式启动，需手动指定配置文件启动</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h4 id="3-3-3-mysql多开"><a href="#3-3-3-mysql多开" class="headerlink" title="3.3.3 mysql多开"></a>3.3.3 mysql多开</h4><ul>
+<li><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/lijiaman/p/12587630.html">使用mysqld_multi方式</a></p>
+  <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">// 详情见链接</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/lijiaman/p/12588095.html">使用单独的MySQL配置文件</a></p>
+  <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">// 详情见链接</span>
+<span class="token class-name">Q</span><span class="token operator">:</span>此处为什么不像windows一样配置服务呢？
+<span class="token class-name">A</span><span class="token operator">:</span>windows进行初始化mysqld配置路径映射安装后，可以直接net start 服务名，每个服务名对应一个映射路径，有点类似systemctl的<span class="token class-name">ExceStart</span>作用，当然，不通过net的话，每次启动也可以通过 配置文件参数来启动，但太麻烦。
+但linux里面不能直接初始化mysqld配置直接使用，要么通过systemctl制定控制命令，要么每次启动命令如链接一样注明xx配置文件启动mysqld，不能使用service命令各自启动，因为support<span class="token operator">-</span>file里面mysql<span class="token operator">-</span>server仅作用单个，多个为multi<span class="token operator">-</span>server，这又是另外一种配置方式。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+<h3 id="3-4-redis"><a href="#3-4-redis" class="headerlink" title="3.4 redis"></a>3.4 <a href="#redis">redis</a></h3><blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/distance66/p/15190245.html">安装方式</a>采用压缩包自带的 utils/install_server.sh，一路yes即可<br>由于是默认的安装方式，注意默认的命名！</p>
+</blockquote>
+<h4 id="3-4-1-redis多开"><a href="#3-4-1-redis多开" class="headerlink" title="3.4.1 redis多开"></a>3.4.1 redis多开</h4><blockquote>
+<p>简述：一个进程对应一个redis.conf</p>
+</blockquote>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">// 1.复制redis.conf更为redis_6380.conf，修改如下</span>
+pidfile <span class="token operator">:</span> pidfile<span class="token operator">/</span><span class="token keyword">var</span><span class="token operator">/</span>run<span class="token operator">/</span>redis<span class="token operator">/</span>redis_6380<span class="token punctuation">.</span>pid
+port <span class="token number">6380</span>
+logfile <span class="token operator">:</span> logfile<span class="token operator">/</span><span class="token keyword">var</span><span class="token operator">/</span>log<span class="token operator">/</span>redis<span class="token operator">/</span>redis_6380<span class="token punctuation">.</span>log
+dbfilename <span class="token operator">:</span> dbfilenamedump_6380<span class="token punctuation">.</span>rdb
+<span class="token comment">// 2.通过指定配置文件 redis_6380.conf 开启端口为6380的redis服务</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>/redis<span class="token operator">-</span>server <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>/redis_6380<span class="token punctuation">.</span>conf 
+<span class="token comment">// 3.查询redis的是否启动多实例</span>
+ps <span class="token operator">-</span>ef <span class="token operator">|</span> grep redis
+<span class="token comment">// 4.客户端指定连接redis服务：</span>
+<span class="token comment">// redis-cli –h IP地址 –p 端口 -a 密码	//默认IP本机 端口6379 密码在配置文件中配置</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>/redis<span class="token operator">-</span>cli <span class="token operator">-</span>p <span class="token number">6380</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
                 
             </div>
             <hr/>
@@ -1114,8 +2388,8 @@ spring-boot-starter-undertow
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Skill/">
-                                    <span class="chip bg-color">Skill</span>
+                                <a href="/tags/technique/">
+                                    <span class="chip bg-color">technique</span>
                                 </a>
                             
                         </div>
@@ -1575,7 +2849,7 @@ spring-boot-starter-undertow
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            摘要：结构篇
                         
                     </div>
                     <div class="publish-info">
@@ -1616,15 +2890,15 @@ spring-boot-starter-undertow
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.webp" class="responsive-img" alt="linux规范">
+                        <img src="/medias/featureimages/13.webp" class="responsive-img" alt="Linux规范">
                         
-                        <span class="card-title">linux规范</span>
+                        <span class="card-title">Linux规范</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            摘要：linux规范
                         
                     </div>
                     <div class="publish-info">
@@ -1986,7 +3260,7 @@ spring-boot-starter-undertow
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2021</span>
+                <span id="year">2021-2022</span>
             
             <a href="/about" target="_blank">yinglonglll</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
@@ -1994,7 +3268,7 @@ spring-boot-starter-undertow
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">13.4k</span>
+                        class="white-color">74.2k</span>
             
             
             
